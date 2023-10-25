@@ -1,9 +1,15 @@
 <script setup lang="ts">
-import TheWelcome from '../components/TheWelcome.vue'
+import GeneralLayout from '@/layout/GeneralLayout.vue'
 </script>
 
 <template>
-  <main>
-    <TheWelcome />
-  </main>
+  <GeneralLayout>
+    <div class="grid-home">cfghg</div>
+  </GeneralLayout>
 </template>
+
+<style scoped lang="scss">
+.grid-home {
+  height: 100%;
+}
+</style>
