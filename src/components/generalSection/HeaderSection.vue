@@ -33,10 +33,10 @@
 </template>
 
 <script setup lang="ts">
-import IconBellVue from '../icons/IconBell.vue'
-import IconEdmachina from '../icons/IconEdmachina.vue'
-import IconGlobalVue from '../icons/IconGlobal.vue'
-import IconMoonVue from '../icons/IconMoon.vue'
+import IconBellVue from '../icons/headerIcons/IconBell.vue'
+import IconEdmachina from '../icons/headerIcons/IconEdmachina.vue'
+import IconGlobalVue from '../icons/headerIcons/IconGlobal.vue'
+import IconMoonVue from '../icons/headerIcons/IconMoon.vue'
 </script>
 
 <style scoped lang="scss">
