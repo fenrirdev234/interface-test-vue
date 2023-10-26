@@ -55,6 +55,7 @@ import IconUpdate from '../icons/menuIcons/IconUpdate.vue'
   flex-direction: column;
   align-items: center;
   padding-top: 10px;
+  padding-bottom: 10px;
 }
 .menu-items {
   width: 45px;

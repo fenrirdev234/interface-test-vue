@@ -1,5 +1,5 @@
 <template>
-  <div class="footer"><p>COPYRIGHT 2023 EdMachina</p></div>
+  <div class="footer"><p>COPYRIGHT © 2023 EdMachina</p></div>
 </template>
 
 <script setup lang="ts"></script>
