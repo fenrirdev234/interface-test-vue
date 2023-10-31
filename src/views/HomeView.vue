@@ -1,4 +1,7 @@
 <script setup lang="ts">
+import TabsVue from '@/components/ui/Tab/TabsVue.vue'
+import TabVue from '@/components/ui/Tab/TabVue.vue'
+import TimelineActivity from '@/components/ui/Timelime.vue/TimelineActivity.vue'
 import GeneralLayout from '@/layout/GeneralLayout.vue'
 </script>
 
@@ -7,7 +10,15 @@ import GeneralLayout from '@/layout/GeneralLayout.vue'
     <section class="container-home">
       <div class="grid-home">
         <aside class="side-home">asdsad</aside>
-        <section class="section-home">dfdsfsfds</section>
+        <section class="section-home">
+          <TabsVue>
+            <TabVue title="First Tab">
+              <TimelineActivity />
+            </TabVue>
+            <TabVue title="First Tabfhfg">jgjgj </TabVue>
+            <TabVue title="First sdfdsfbhfdh">hkhkh </TabVue>
+          </TabsVue>
+        </section>
       </div>
     </section>
   </GeneralLayout>
