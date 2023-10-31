@@ -15,7 +15,7 @@
           <button class="nav-icon">
             <IconBellVue />
             <div class="notification-number">
-              <spam>4</spam>
+              <span>4</span>
             </div>
           </button>
         </nav>
