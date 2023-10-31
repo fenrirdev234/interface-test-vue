@@ -41,6 +41,7 @@ import SideMenu from '@/components/generalSection/SideMenu.vue'
   grid-area: main;
   display: flex;
   justify-content: center;
+  overflow-y: scroll;
 }
 .footer-container {
   grid-area: footer;
