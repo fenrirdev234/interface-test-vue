@@ -1,5 +1,5 @@
 <template>
-  <div class="border-4 border-black rounded">
+  <div class="">
     <ul class="flex flex-nowrap justify-between tabs-flex">
       <li
         class="tab-button"
@@ -39,14 +39,13 @@ provide('activeTabHash', activeTabHash)
 .tabs-flex {
   display: flex;
   gap: 1px;
+  justify-content: center;
 }
 
 .tab-button {
-  background-color: $white-1;
   cursor: pointer;
   padding: 14px;
-  border-top-right-radius: 6px;
-  border-top-left-radius: 6px;
+
   font-size: 14px;
   font-weight: 600;
   color: $gray-1;
@@ -54,8 +53,30 @@ provide('activeTabHash', activeTabHash)
 }
 .tab-button__active {
   opacity: 1;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: $violet-2;
+    bottom: 0;
+    left: 0;
+  }
+  &::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: $violet-2;
+    z-index: 2;
+    bottom: -3px;
+    left: 0;
+  }
 }
-.tab-butto_desactive {
+
+tab-button__active .tab-butto_desactive {
   opacity: 0.4;
 }
 </style>

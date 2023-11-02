@@ -38,8 +38,7 @@ watch(activeTabHash, () => {
 <style scoped lang="scss">
 .tab-container {
   padding: 15px;
-  background-color: $white-1;
-  border-bottom-right-radius: 6px;
-  border-bottom-left-radius: 6px;
+
+  border-top: 2px solid $gray-6;
 }
 </style>
