@@ -10,6 +10,7 @@
       <div v-if="isOpen" class="dropdown__content">
         <button
           class="dropdown__item"
+          v-click-away="onClickAway"
           @click="selectItem(item)"
           v-for="item in props.data"
           v-bind:key="item"
@@ -51,6 +52,10 @@ const selectItem = (value: string) => {
     emit('changeSelected', value)
   }
 }
+
+const onClickAway = () => {
+  isOpen.value = !isOpen.value
+}
 </script>
 
 <style scoped lang="scss">
@@ -58,7 +63,6 @@ const selectItem = (value: string) => {
   position: relative;
 }
 .dropdown__button {
-  font-weight: 600;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -67,7 +71,6 @@ const selectItem = (value: string) => {
   border-radius: 5px;
   color: $gray-1;
   border-color: $gray-6;
-
   padding-top: 14px;
   padding-bottom: 14px;
   padding-left: 14px;
@@ -91,12 +94,14 @@ const selectItem = (value: string) => {
   width: 100%;
   display: flex;
   justify-content: center;
+  font-size: 9px;
   &:hover {
     background-color: $gray-6;
   }
 }
 .dropdown__title {
   padding-right: 16px;
+  font-size: 9px;
 }
 .dropdown__arrow--up {
   transition: all 0.4s ease;
