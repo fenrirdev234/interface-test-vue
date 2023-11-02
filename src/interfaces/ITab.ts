@@ -1,4 +1,4 @@
-export default interface ITab {
+export interface ITab {
   title: string
   hash: string
 }

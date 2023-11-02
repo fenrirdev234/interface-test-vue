@@ -1,6 +1,6 @@
-export default interface ITimeline {
+export interface ITimeline {
   autor?: string
-  type?: string
+  type?: 'email' | 'chat' | 'academy' | 'call' | 'tag'
   title?: string
   message?: string
   link?: string
@@ -11,9 +11,14 @@ export default interface ITimeline {
     year?: string
   }
 }
-export default interface ITimelineCard {
+
+export interface ITimelineIcon {
+  type?: 'email' | 'chat' | 'academy' | 'call' | 'tag'
+}
+
+export interface ITimelineCard {
   autor?: string
-  type?: string
+
   title?: string
   message?: string
   link?: string
