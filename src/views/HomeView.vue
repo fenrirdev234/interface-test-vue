@@ -1,7 +1,6 @@
 <script setup lang="ts">
-import TabsVue from '@/components/ui/Tab/TabsVue.vue'
-import TabVue from '@/components/ui/Tab/TabVue.vue'
-import TimelineActivity from '@/components/ui/Timelime.vue/TimelineActivity.vue'
+import MainHome from '@/components/pages/home/MainHome.vue'
+
 import GeneralLayout from '@/layout/GeneralLayout.vue'
 </script>
 
@@ -11,13 +10,7 @@ import GeneralLayout from '@/layout/GeneralLayout.vue'
       <div class="grid-home">
         <aside class="side-home">asdsad</aside>
         <section class="section-home">
-          <TabsVue>
-            <TabVue title="First Tab">
-              <TimelineActivity />
-            </TabVue>
-            <TabVue title="First Tabfhfg">jgjgj </TabVue>
-            <TabVue title="First sdfdsfbhfdh">hkhkh </TabVue>
-          </TabsVue>
+          <MainHome />
         </section>
       </div>
     </section>
@@ -48,7 +41,9 @@ import GeneralLayout from '@/layout/GeneralLayout.vue'
 
 @include mediaMin(590px) {
   .grid-home {
-    grid-template-columns: 2fr 3fr;
+    grid-template-columns:
+      minmax(min(100%, 180px), 380px)
+      1fr;
     grid-template-rows: 1fr;
 
     grid-template-areas: 'sideHome SectionHome';
