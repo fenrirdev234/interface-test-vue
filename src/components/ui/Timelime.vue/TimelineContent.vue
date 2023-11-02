@@ -1,12 +1,29 @@
 <template>
   <div class="timeline__container" v-for="(card_item, index) in props.data" :key="index">
-    <div class="timeline-item-icon__content">
+    <div
+      class="timeline-item-icon__content"
+      :class="{
+        'timeline-item-icon--none':
+          index !== 0 && card_item.time?.month === props.data[index - 1].time?.month
+      }"
+    >
       <div :class="{ 'timeline-item-icon__line': index > 0 }" />
     </div>
-    <p class="timeline__month">{{ card_item.time?.month }} {{ card_item.time?.year }}</p>
+
+    <p
+      :class="{
+        'timeline-item-icon--none':
+          index !== 0 && card_item.time?.month === props.data[index - 1].time?.month
+      }"
+      class="timeline__month"
+    >
+      {{ card_item.time?.month }} {{ card_item.time?.year }}
+    </p>
+
     <div class="timeline-item-icon__content">
       <div v-if="index > 0" class="timeline-item-icon__line--top" />
-      <div class="timeline-item-icon"></div>
+
+      <TimelineIcons :type="card_item.type" />
       <div v-if="index < props.data.length - 1" class="timeline-item-icon__line--bottom" />
     </div>
     <div class="timeline__item">
@@ -24,9 +41,15 @@
 </template>
 
 <script setup lang="ts">
-import type ITimeline from '../../../interfaces/ITimeline'
+import { type ITimeline } from '../../../interfaces/ITimeline'
 
 import TimeLineCard from './TimeLineCard.vue'
+import TimelineIcons from './TimelineIcons.vue'
+
+/* :class="{
+        'timeline-item-icon--none':
+          index !== 0 && card_item.time?.month === props.data[index - 1].time?.month
+      }" */
 
 const props = defineProps({
   data: { type: Array<ITimeline>, default: [] }
@@ -54,6 +77,9 @@ const props = defineProps({
   width: 100%;
   padding-top: 12px;
   padding-bottom: 12px;
+  font-size: 12px;
+  color: $violet-2;
+  font-weight: 600;
 }
 .timeline-item-icon__line {
   width: 2px;
@@ -84,8 +110,11 @@ const props = defineProps({
   align-items: center;
   width: 24px;
   justify-content: center;
+  font-size: 12px;
 }
-
+.timeline-item-icon--none {
+  display: none;
+}
 .timeline-item-icon {
   border: 2px solid;
   border-color: $gray-5;
@@ -93,6 +122,7 @@ const props = defineProps({
   width: 24px;
   height: 24px;
   background-color: $violet-2;
+
   z-index: 1;
 }
 </style>

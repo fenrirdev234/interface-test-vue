@@ -20,7 +20,7 @@
 </template>
 
 <script setup lang="ts">
-import type ITimelineCard from '../../../interfaces/ITimeline'
+import { type ITimelineCard } from '../../../interfaces/ITimeline'
 const props = defineProps<ITimelineCard>()
 </script>
 
@@ -32,6 +32,8 @@ const props = defineProps<ITimelineCard>()
   padding: 12px 10px;
   font-size: 10px;
   font-weight: 700;
+  margin-top: 2.5px;
+  margin-bottom: 2.5px;
 }
 
 .timeline__title {

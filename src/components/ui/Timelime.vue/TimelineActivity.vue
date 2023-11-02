@@ -13,6 +13,7 @@
           :data="filterTimeline.filter.users.data"
           @change-selected="filterUser($event)"
         />
+        <SearchInputVue />
       </div>
     </header>
     <section class="timeline__content">
@@ -23,6 +24,7 @@
 
 <script setup lang="ts">
 import DropdownVueVue from '../Dropdown/DropdownVue.vue'
+import SearchInputVue from '../SearchInput/SearchInput.vue'
 import TimelineContent from './TimelineContent.vue'
 const filterTimeline = {
   data: [
@@ -30,7 +32,7 @@ const filterTimeline = {
       autor: 'Gerardo Moyano',
       type: 'email',
       title: 'Email Sent',
-      message: 'Upselling email sent',
+      message: 'Upselling email sent.',
       link: 'View Email',
       from: '',
       time: {
@@ -43,7 +45,7 @@ const filterTimeline = {
       autor: 'Prof. Jean Charleton',
       type: 'chat',
       title: 'Chat Meeting',
-      message: 'Whatsapp chet meeting.',
+      message: 'Whatsapp chat meeting.',
       link: '',
       from: '',
       time: {
@@ -122,7 +124,7 @@ const filterTimeline = {
       autor: '',
       type: 'call',
       title: 'Chat Meeting',
-      message: 'Direct Call made to +52 55 22126164 \nCallDuration: 1 mins. 22 sec.',
+      message: 'Direct Call made to +52 55 22126164 \nCall Duration: 1 mins. 22 sec.',
       link: '',
       from: 'Gerardo Moyano',
       time: {
@@ -135,7 +137,7 @@ const filterTimeline = {
       autor: '',
       type: 'call',
       title: 'Chat Meeting',
-      message: 'Direct Call made to +52 55 22126164 \nCallDuration: 2 mins. 22 sec.',
+      message: 'Direct Call made to +52 55 22126164 \nCall Duration: 2 mins. 22 sec.',
       link: '',
       from: 'Gerardo Moyano',
       time: {
@@ -184,6 +186,8 @@ const filterUser = (value: string) => {
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  flex-wrap: wrap;
 }
 .timeline__filter {
   display: flex;
@@ -198,4 +202,9 @@ const filterUser = (value: string) => {
 .timeline__content {
   width: 100%;
 }
+/* @include mediaMin(830px) {
+  .header-timeline {
+    flex-direction: row;
+  }
+} */
 </style>
