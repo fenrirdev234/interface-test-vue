@@ -79,8 +79,6 @@ const changeCareer = (carrers: ICareer[], selected: string) => {
   const filtersResult = carrers.filter((careerfitler) => careerfitler.id === selected)
   career.value = filtersResult[0]
 }
-
-/* console.log(optionCareer(data.career)) */
 </script>
 
 <style scoped>
