@@ -48,8 +48,8 @@ import IconEditVue from '@/components/icons/homeIcons/IconEdit.vue'
 .first-article {
   display: flex;
   justify-content: space-between;
-  padding-top: 12px;
-  padding-right: 14px;
+  padding-top: 14px;
+  padding-right: 13px;
 }
 .main-icons {
   width: 16px;

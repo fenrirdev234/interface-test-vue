@@ -3,7 +3,7 @@
     <header class="header-timeline">
       <h4 class="header-timeline__title">Timeline</h4>
       <div class="timeline__filter">
-        <DropdownVueVue
+        <!-- <DropdownVueVue
           :title="filterTimeline.filter.years.title"
           :data="filterTimeline.filter.years.data"
           @change-selected="filterTime($event)"
@@ -12,7 +12,7 @@
           :title="filterTimeline.filter.users.title"
           :data="filterTimeline.filter.users.data"
           @change-selected="filterUser($event)"
-        />
+        /> -->
         <SearchInputVue />
       </div>
     </header>

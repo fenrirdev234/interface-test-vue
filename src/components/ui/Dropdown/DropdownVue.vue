@@ -1,7 +1,7 @@
 <template>
   <div class="dropdown">
     <button class="dropdown__button" @click="isOpen = !isOpen">
-      <span class="dropdown__title">{{ seleted }}</span>
+      <span class="dropdown__title">{{ title }}</span>
       <div :class="{ 'dropdown__arrow--up': isOpen, 'dropdown__arrow--down': !isOpen }">
         <IconArrowSolid />
       </div>
@@ -11,12 +11,12 @@
         <button
           class="dropdown__item"
           v-click-away="onClickAway"
-          @click="selectItem(item)"
           v-for="item in props.data"
-          v-bind:key="item"
-          :class="{ 'dropdown__item--selected': item === seleted }"
+          @click="selectItem(item.id, item.name)"
+          v-bind:key="item.id"
+          :class="{ 'dropdown__item--selected': item.id === seleted }"
         >
-          {{ item }}
+          {{ item.name }}
         </button>
       </div>
     </Transition>
@@ -26,30 +26,28 @@
 <script setup lang="ts">
 import { ref, type Ref } from 'vue'
 import IconArrowSolid from '@/components/icons/homeIcons/IconArrowSolid.vue'
+import { type IDropdownProps } from '../../../interfaces/IDropdown'
 
-const props = defineProps({
-  data: {
-    type: Array<string>
-  },
-  title: {
-    type: String,
-    default: ''
-  }
+const props = withDefaults(defineProps<IDropdownProps>(), {
+  initialValue: () => ({ name: '', id: '' }),
+  data: () => [{ name: '', id: '' }]
 })
 
 const emit = defineEmits<{ changeSelected: [value: string] }>()
 
-const seleted: Ref<string> = ref(props?.title)
+const seleted: Ref<string> = ref(props.initialValue.id)
+
+const title: Ref<string> = ref(props.initialValue.name)
 
 const isOpen: Ref<boolean> = ref(false)
 
-const selectItem = (value: string) => {
-  if (value === seleted.value) {
-    seleted.value = props.title
+const selectItem = (id: string, name: string) => {
+  if (id === seleted.value) {
     emit('changeSelected', '')
   } else {
-    seleted.value = value
-    emit('changeSelected', value)
+    seleted.value = id
+    title.value = name
+    emit('changeSelected', id)
   }
 }
 
@@ -63,6 +61,7 @@ const onClickAway = () => {
   position: relative;
 }
 .dropdown__button {
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;

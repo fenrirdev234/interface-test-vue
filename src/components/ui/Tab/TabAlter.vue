@@ -37,8 +37,6 @@ watch(activeTabHash, () => {
 
 <style scoped lang="scss">
 .tab-container {
-  padding: 15px;
-
   border-top: 2px solid $gray-6;
 }
 </style>

@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import MainHome from '@/components/pages/home/MainHome.vue'
+import MainSide from '@/components/pages/home/MainSide.vue'
 
 import GeneralLayout from '@/layout/GeneralLayout.vue'
 </script>
@@ -8,7 +9,9 @@ import GeneralLayout from '@/layout/GeneralLayout.vue'
   <GeneralLayout>
     <section class="container-home">
       <div class="grid-home">
-        <aside class="side-home">asdsad</aside>
+        <aside class="side-home">
+          <MainSide />
+        </aside>
         <section class="section-home">
           <MainHome />
         </section>
@@ -29,25 +32,25 @@ import GeneralLayout from '@/layout/GeneralLayout.vue'
   grid-template-rows: 1fr;
   height: 100%;
   grid-template-areas: 'SectionHome';
-  padding: 8px;
 }
 .side-home {
   grid-area: sideHome;
   display: none;
+  padding: 15px;
 }
 .section-home {
   grid-area: SectionHome;
+  padding: 15px;
 }
 
 @include mediaMin(590px) {
   .grid-home {
     grid-template-columns:
-      minmax(min(100%, 180px), 380px)
+      minmax(auto, 390px)
       1fr;
     grid-template-rows: 1fr;
 
     grid-template-areas: 'sideHome SectionHome';
-    padding: 15px;
   }
   .side-home {
     display: block;
