@@ -50,6 +50,7 @@ import IconEditVue from '@/components/icons/homeIcons/IconEdit.vue'
   justify-content: space-between;
   padding-top: 14px;
   padding-right: 13px;
+  padding-bottom: 14px;
 }
 .main-icons {
   width: 16px;

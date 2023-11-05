@@ -37,10 +37,12 @@ import GeneralLayout from '@/layout/GeneralLayout.vue'
   grid-area: sideHome;
   display: none;
   padding: 15px;
+  overflow-y: scroll;
 }
 .section-home {
   grid-area: SectionHome;
   padding: 15px;
+  overflow-y: scroll;
 }
 
 @include mediaMin(590px) {

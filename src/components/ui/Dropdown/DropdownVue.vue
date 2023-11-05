@@ -100,7 +100,7 @@ const onClickAway = () => {
 }
 .dropdown__title {
   padding-right: 16px;
-  font-size: 9px;
+  font-size: 12px;
 }
 .dropdown__arrow--up {
   transition: all 0.4s ease;
