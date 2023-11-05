@@ -10,17 +10,42 @@
             <IconCopy />
           </div>
         </div>
-
         <p>Status: {{ data.status }}</p>
       </div>
     </div>
-    <div>dfgdg</div>
+    <ul class="items-info">
+      <li class="item-info">
+        <IconEditText />
+      </li>
+      <li class="item-info">
+        <IconChat />
+      </li>
+      <li class="item-info">
+        <IconCalendar />
+      </li>
+      <li class="item-info">
+        <IconMessage />
+      </li>
+      <li class="item-info">
+        <IconPhoneVue />
+      </li>
+      <li class="item-info">
+        <IconMore />
+      </li>
+    </ul>
   </SectionContainer>
 </template>
 
 <script setup lang="ts">
 import IconCopy from '@/components/icons/homeIcons/IconCopy.vue'
 import SectionContainer from './SectionContainer.vue'
+import IconMore from '@/components/icons/menuIcons/IconMore.vue'
+
+import IconCalendar from '@/components/icons/homeIcons/IconCalendar.vue'
+import IconPhoneVue from '@/components/icons/homeIcons/IconPhone.vue'
+import IconMessage from '@/components/icons/homeIcons/IconMessage.vue'
+import IconChat from '@/components/icons/homeIcons/IconChat.vue'
+import IconEditText from '@/components/icons/homeIcons/IconEditText.vue'
 
 const data = {
   name: 'Danielle Munchen Schollengberg',
@@ -33,6 +58,7 @@ const data = {
 .info-data {
   display: flex;
   padding-bottom: 42px;
+  padding-top: 20px;
   gap: 15px;
 }
 .info-data__image-container {
@@ -45,6 +71,7 @@ const data = {
   color: $gray-1;
   font-weight: 600;
   text-wrap: wrap;
+  padding-top: 4px;
 }
 
 .info-data__name {
@@ -56,5 +83,23 @@ const data = {
   display: flex;
   justify-content: space-between;
   padding-bottom: 15px;
+}
+
+.items-info {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 10px;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.item-info {
+  width: 20px;
+  height: 20px;
+
+  justify-content: center;
+  display: flex;
+  align-items: end;
+  color: $gray-1;
 }
 </style>

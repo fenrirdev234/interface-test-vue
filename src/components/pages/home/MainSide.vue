@@ -4,6 +4,7 @@
     <StudentSection />
     <AboutSectionVue />
     <CareerSectionVue />
+    <ManageSection />
   </div>
 </template>
 
@@ -11,6 +12,7 @@
 import AboutSectionVue from './Section/AboutSection.vue'
 import CareerSectionVue from './Section/CareerSection.vue'
 import InfoSection from './Section/InfoSection.vue'
+import ManageSection from './Section/ManageSection.vue'
 import StudentSection from './Section/StudentSection.vue'
 </script>
 
