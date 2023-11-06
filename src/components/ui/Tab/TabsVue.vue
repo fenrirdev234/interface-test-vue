@@ -11,7 +11,7 @@
         :key="tab?.title"
         @click="activeTabHash = tab.hash"
       >
-        {{ tab?.title }}
+        <TabButton :title="tab?.title" :type="tab?.type" />
       </li>
     </ul>
     <slot />
@@ -21,6 +21,7 @@
 <script setup lang="ts">
 import { type ITab } from '@/interfaces/ITab'
 import { ref, type Ref, provide } from 'vue'
+import TabButton from './TabButton.vue'
 
 const activeTabHash: Ref<string> = ref('')
 const tabs: Ref<ITab[]> = ref([])
@@ -32,6 +33,7 @@ provide('addTab', (tab: ITab) => {
     activeTabHash.value = tab.hash
   }
 })
+
 provide('activeTabHash', activeTabHash)
 </script>
 

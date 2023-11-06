@@ -1,15 +1,13 @@
 <script setup lang="ts">
 import { inject, ref, type Ref, onBeforeMount, watch } from 'vue'
-import { type ITab } from '../../../interfaces/ITab'
+import { type ITab, type ITabBottom } from '../../../interfaces/ITab'
 
 const addTab = inject('addTab') as (tab: ITab) => void
 const activeTabHash = inject('activeTabHash') as Ref<string>
 
-const props = defineProps({
-  title: {
-    type: String,
-    required: true
-  }
+const props = withDefaults(defineProps<ITabBottom>(), {
+  title: '',
+  type: 'none'
 })
 
 const hash: Ref<string> = ref('')
@@ -20,7 +18,8 @@ onBeforeMount(() => {
 
   addTab({
     title: props.title,
-    hash: hash.value
+    hash: hash.value,
+    type: props.type
   })
 })
 

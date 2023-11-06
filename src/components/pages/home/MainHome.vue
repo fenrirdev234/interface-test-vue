@@ -11,13 +11,7 @@
     </article>
     <TabsAlter>
       <TabAlter title="Overview">
-        <TabsVue>
-          <TabVue title="First Tab">
-            <TimelineActivity />
-          </TabVue>
-          <TabVue title="jljl"> </TabVue>
-          <TabVue title="First sdfdsfbhfdh"></TabVue>
-        </TabsVue>
+        <OverviewSection />
       </TabAlter>
       <TabAlter title="Enrollment"></TabAlter>
       <TabAlter title="Academic"></TabAlter>
@@ -30,10 +24,8 @@ import TabsAlter from '@/components/ui/Tab/TabsAlter.vue'
 
 import TabAlter from '@/components/ui/Tab/TabAlter.vue'
 
-import TabsVue from '@/components/ui/Tab/TabsVue.vue'
-import TabVue from '@/components/ui/Tab/TabVue.vue'
-import TimelineActivity from '@/components/ui/Timelime.vue/TimelineActivity.vue'
 import IconEditVue from '@/components/icons/homeIcons/IconEdit.vue'
+import OverviewSection from './Section/OverviewSection.vue'
 </script>
 
 <style scoped lang="scss">
@@ -55,6 +47,8 @@ import IconEditVue from '@/components/icons/homeIcons/IconEdit.vue'
 .main-icons {
   width: 16px;
   height: 16px;
+  color: $gray-1;
+  @include pseudoActive;
 }
 
 .main-section {
