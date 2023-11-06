@@ -8,3 +8,9 @@
     @content;
   }
 }
+@mixin pseudoActive {
+  &:active {
+    color: $violet-1;
+    @content;
+  }
+}

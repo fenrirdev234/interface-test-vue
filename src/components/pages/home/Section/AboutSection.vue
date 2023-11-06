@@ -8,7 +8,10 @@
           <li class="about-item">
             <div class="about-item__email">
               <p>Email:</p>
-              <button class="about-item__icon">
+              <button
+                class="about-item__icon"
+                @click="toastCopyMessage('email Copied', data.email)"
+              >
                 <IconPenVue />
               </button>
             </div>
@@ -32,6 +35,7 @@ import AccordionVue from '@/components/ui/Accordion/AccordionVue.vue'
 import Divider from '@/components/ui/divider/DividerVue.vue'
 import IconPenVue from '@/components/icons/homeIcons/IconPen.vue'
 import ItemSection from './ItemSection.vue'
+import { toastCopyMessage } from '@/lib/vueToastification/toastCopyMessage'
 
 const data = {
   firstName: 'Danielle',
@@ -76,5 +80,6 @@ const data = {
 .about-item__icon {
   width: 9px;
   height: 9px;
+  @include pseudoActive;
 }
 </style>

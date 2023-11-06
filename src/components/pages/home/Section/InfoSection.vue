@@ -6,9 +6,12 @@
         <h4 class="info-data__name">{{ data.name }}</h4>
         <div class="info-data__id">
           <p>Reg. ID: {{ data.regID }}</p>
-          <div>
+          <button
+            @click="toastCopyMessage('Reg. ID Copied', data.regID)"
+            class="info-data__button-id"
+          >
             <IconCopy />
-          </div>
+          </button>
         </div>
         <p>Status: {{ data.status }}</p>
       </div>
@@ -46,6 +49,7 @@ import IconPhoneVue from '@/components/icons/homeIcons/IconPhone.vue'
 import IconMessage from '@/components/icons/homeIcons/IconMessage.vue'
 import IconChat from '@/components/icons/homeIcons/IconChat.vue'
 import IconEditText from '@/components/icons/homeIcons/IconEditText.vue'
+import { toastCopyMessage } from '@/lib/vueToastification/toastCopyMessage'
 
 const data = {
   name: 'Danielle Munchen Schollengberg',
@@ -61,6 +65,10 @@ const data = {
   padding-top: 20px;
   gap: 15px;
 }
+.info-data__button-id {
+  @include pseudoActive;
+}
+
 .info-data__image-container {
   width: 66px;
   height: 66px;
@@ -96,10 +104,10 @@ const data = {
 .item-info {
   width: 20px;
   height: 20px;
-
   justify-content: center;
   display: flex;
   align-items: end;
   color: $gray-1;
+  @include pseudoActive;
 }
 </style>
