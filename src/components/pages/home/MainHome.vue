@@ -11,6 +11,7 @@
     </article>
     <TabsAlter>
       <TabAlter title="Overview">
+        <EventSection />
         <OverviewSection />
       </TabAlter>
       <TabAlter title="Enrollment"></TabAlter>
@@ -26,6 +27,7 @@ import TabAlter from '@/components/ui/Tab/TabAlter.vue'
 
 import IconEditVue from '@/components/icons/homeIcons/IconEdit.vue'
 import OverviewSection from './Section/OverviewSection.vue'
+import EventSection from './Section/EventSection.vue'
 </script>
 
 <style scoped lang="scss">

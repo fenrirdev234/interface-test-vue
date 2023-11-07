@@ -1,49 +1,32 @@
 <template>
-  <nav class="menu-container">
-    <ul class="menu-list">
-      <li class="menu-items menu-items--active"><IconHome /></li>
-      <li class="menu-items menu-items--bg-none">
-        <IconMoreVue />
-      </li>
-      <li class="menu-items menu-items--bg">
-        <IconPlus />
-      </li>
-      <li class="menu-items menu-items--bg">
-        <IconUpdate />
-      </li>
-      <li class="menu-items menu-items--bg">
-        <IconGrowVue />
-      </li>
-      <li class="menu-items menu-items--bg">
-        <IconEducVue />
-      </li>
-      <li class="menu-items menu-items--bg">
-        <IconStatistics />
-      </li>
-      <li class="menu-items menu-items--bg">
-        <IconStatisticsMoreVue />
-      </li>
-      <li class="menu-items menu-items--bg">
-        <IconProcessVue />
-      </li>
-    </ul>
-  </nav>
+  <section class="menu">
+    <nav class="menu-container">
+      <ul class="menu-list">
+        <SideBottonVue name="Dashboard" icon="dashboard" :active="true" />
+        <SideBottonVue name="Smart Enroller" icon="smart-enroller" :active="false" />
+        <SideBottonVue name="Dropout Shield " icon="dropout-shield" :active="false" />
+        <SideBottonVue name="Risk Detector" icon="risk-detector" :active="false" />
+        <SideBottonVue name="Academy Offer" icon="academy-offer" :active="false" />
+        <SideBottonVue name="My report" icon="my-report" :active="false" />
+        <SideBottonVue name="custom Report" icon="custom-report" :active="false" />
+        <SideBottonVue name="Workflows" icon="workflows" :active="false" />
+      </ul>
+    </nav>
+  </section>
 </template>
 
 <script setup lang="ts">
-import IconEducVue from '../icons/menuIcons/IconEduc.vue'
-import IconGrowVue from '../icons/menuIcons/IconGrow.vue'
-import IconHome from '../icons/menuIcons/IconHome.vue'
-import IconMoreVue from '../icons/menuIcons/IconMore.vue'
-import IconPlus from '../icons/menuIcons/IconPlus.vue'
-import IconProcessVue from '../icons/menuIcons/IconProcess.vue'
-import IconStatistics from '../icons/menuIcons/IconStatistics.vue'
-import IconStatisticsMoreVue from '../icons/menuIcons/IconStatisticsMore.vue'
-import IconUpdate from '../icons/menuIcons/IconUpdate.vue'
+import SideBottonVue from '../ui/sideBar/SideBotton.vue'
 </script>
 
 <style scoped lang="scss">
+.menu {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
 .menu-container {
+  position: absolute;
   width: 100%;
   height: 100%;
   background-color: $white-1;
