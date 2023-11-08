@@ -2,7 +2,7 @@ import './assets/main.css'
 import 'vue-toastification/dist/index.css'
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
-import VueClickAway from 'vue3-click-away'
+
 import Toast, { type PluginOptions } from 'vue-toastification'
 import App from './App.vue'
 import router from './router'
@@ -31,6 +31,5 @@ app.use(createPinia())
 app.use(router)
 
 app.use(Toast, options)
-app.use(VueClickAway)
 
 app.mount('#app')

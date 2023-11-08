@@ -19,7 +19,7 @@ import SideMenu from '@/components/generalSection/SideMenu.vue'
 <style lang="scss" scoped>
 .container {
   width: 100%;
-  height: 100vh;
+
   background-color: $gray-7;
   display: grid;
 
@@ -34,6 +34,7 @@ import SideMenu from '@/components/generalSection/SideMenu.vue'
   grid-area: header;
 }
 .menu-container {
+  z-index: 4;
   grid-area: menu;
   display: none;
 }
@@ -41,7 +42,6 @@ import SideMenu from '@/components/generalSection/SideMenu.vue'
   grid-area: main;
   display: flex;
   justify-content: center;
-  overflow-y: scroll;
 }
 .footer-container {
   grid-area: footer;

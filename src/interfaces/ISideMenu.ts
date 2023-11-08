@@ -17,3 +17,7 @@ export interface ISideButton extends ISideIcon {
   name: string
   weigth: boolean
 }
+
+export interface ISideAccordion extends ISideButton, ISideIcon {
+  items: string[]
+}

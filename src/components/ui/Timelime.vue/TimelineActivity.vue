@@ -17,7 +17,9 @@
       </div>
     </header>
     <section class="timeline__content">
-      <TimelineContent :data="filterTimeline.data" />
+      <div class="timeline__item">
+        <TimelineContent :data="filterTimeline.data" />
+      </div>
     </section>
   </div>
 </template>
@@ -26,6 +28,8 @@
 import DropdownVueVue from '../Dropdown/DropdownVue.vue'
 import SearchInputVue from '../SearchInput/SearchInput.vue'
 import TimelineContent from './TimelineContent.vue'
+import VueOverlayScollbarVue from '@/lib/vueOverlayScrollbar/VueOverlayScollbar.vue'
+
 const filterTimeline = {
   data: [
     {
@@ -202,6 +206,11 @@ const filterUser = (value: string) => {
 .timeline__content {
   width: 100%;
 }
+.timeline__item {
+  display: flex;
+  flex-direction: column;
+}
+
 /* @include mediaMin(830px) {
   .header-timeline {
     flex-direction: row;

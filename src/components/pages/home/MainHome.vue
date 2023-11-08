@@ -36,7 +36,6 @@ import EventSection from './Section/EventSection.vue'
   font-size: 13px;
   font-weight: 600;
   display: flex;
-
   gap: 4px;
 }
 .first-article {

@@ -37,18 +37,16 @@ import GeneralLayout from '@/layout/GeneralLayout.vue'
   grid-area: sideHome;
   display: none;
   padding: 15px;
-  overflow-y: scroll;
 }
 .section-home {
   grid-area: SectionHome;
   padding: 15px;
-  overflow-y: scroll;
 }
 
-@include mediaMin(590px) {
+@include mediaMin(720px) {
   .grid-home {
     grid-template-columns:
-      minmax(auto, 390px)
+      minmax(auto, 320px)
       1fr;
     grid-template-rows: 1fr;
 
@@ -56,6 +54,14 @@ import GeneralLayout from '@/layout/GeneralLayout.vue'
   }
   .side-home {
     display: block;
+  }
+}
+
+@include mediaMin(960px) {
+  .grid-home {
+    grid-template-columns:
+      minmax(auto, 390px)
+      1fr;
   }
 }
 

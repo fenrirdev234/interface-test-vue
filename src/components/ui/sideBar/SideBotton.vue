@@ -1,8 +1,13 @@
 <template>
-  <div class="side-item" :class="{ 'side-item--active': props.active }">
+  <li
+    class="side-item"
+    :class="{ 'side-item--active': props.active }"
+    @click="collapsed.toggleOpenSidebar()"
+  >
     <SideIcon :icon="props.icon" :active="props.active" />
     <transition name="fade">
       <span
+        v-if="collapsed.isColapsed"
         class="side-item__text"
         :class="{
           'side-item__text--active': props.active,
@@ -12,13 +17,17 @@
         {{ props.name }}
       </span>
     </transition>
-  </div>
+  </li>
 </template>
 
 <script setup lang="ts">
 import SideIcon from './SideIcon.vue'
 import { type ISideButton } from '../../../interfaces/ISideMenu'
+import { useCollapsedStore } from '../../../stores/isCollapsed'
 const props = defineProps<ISideButton>()
+const collapsed = useCollapsedStore()
+
+console.log(collapsed.isColapsed)
 </script>
 
 <style scoped lang="scss">
