@@ -42,7 +42,7 @@ import IconMoonVue from '../icons/headerIcons/IconMoon.vue'
 <style scoped lang="scss">
 .header {
   width: 100%;
-  height: 100%;
+  height: 52px;
   background-color: $violet-1;
   display: flex;
   justify-content: center;
@@ -132,6 +132,9 @@ import IconMoonVue from '../icons/headerIcons/IconMoon.vue'
 }
 
 @include mediaMin(600px) {
+  .header {
+    height: 63px;
+  }
   .header-logo {
     width: 146px;
   }

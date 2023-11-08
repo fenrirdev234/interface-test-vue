@@ -7,7 +7,7 @@
 <style scoped lang="scss">
 .footer {
   background-color: $gray-4;
-  height: 100%;
+  height: 52px;
   font-weight: 600;
   display: flex;
   color: $gray-3;
