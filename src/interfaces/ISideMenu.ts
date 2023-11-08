@@ -4,14 +4,16 @@ export interface ISideIcon {
     | 'dashboard'
     | 'smart-enroller'
     | 'dropout-shield'
+    | 'retention-partner'
     | 'risk-detector'
     | 'academy-offer'
-    | 'my-report'
     | 'more'
+    | 'my-report'
     | 'custom-report'
     | 'workflows'
 }
 
 export interface ISideButton extends ISideIcon {
   name: string
+  weigth: boolean
 }

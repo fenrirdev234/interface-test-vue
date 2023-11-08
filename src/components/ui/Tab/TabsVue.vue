@@ -1,6 +1,6 @@
 <template>
-  <div class="border-4 border-black rounded">
-    <ul class="flex flex-nowrap justify-between tabs-flex">
+  <div>
+    <ul class="tabs-flex">
       <li
         class="tab-button"
         :class="{

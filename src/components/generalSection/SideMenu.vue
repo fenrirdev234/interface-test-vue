@@ -2,14 +2,20 @@
   <section class="menu">
     <nav class="menu-container">
       <ul class="menu-list">
-        <SideBottonVue name="Dashboard" icon="dashboard" :active="true" />
-        <SideBottonVue name="Smart Enroller" icon="smart-enroller" :active="false" />
-        <SideBottonVue name="Dropout Shield " icon="dropout-shield" :active="false" />
-        <SideBottonVue name="Risk Detector" icon="risk-detector" :active="false" />
-        <SideBottonVue name="Academy Offer" icon="academy-offer" :active="false" />
-        <SideBottonVue name="My report" icon="my-report" :active="false" />
-        <SideBottonVue name="custom Report" icon="custom-report" :active="false" />
-        <SideBottonVue name="Workflows" icon="workflows" :active="false" />
+        <SideBottonVue :weigth="true" name="Dashboard" icon="dashboard" :active="true" />
+        <SideBottonVue :weigth="true" name="Smart Enroller" icon="smart-enroller" :active="false" />
+        <SideBottonVue :weigth="true" name="Dropout Shield" icon="dropout-shield" :active="false" />
+        <SideBottonVue
+          :weigth="false"
+          name="Retention Partner"
+          icon="retention-partner"
+          :active="false"
+        />
+        <SideBottonVue :weigth="true" name="Risk Detector" icon="risk-detector" :active="false" />
+        <SideBottonVue name="Academy Offer" icon="academy-offer" :active="false" :weigth="true" />
+        <SideBottonVue name="My report" icon="my-report" :active="false" :weigth="true" />
+        <SideBottonVue name="custom Report" icon="custom-report" :weigth="false" :active="false" />
+        <SideBottonVue name="Workflows" icon="workflows" :active="false" :weigth="false" />
       </ul>
     </nav>
   </section>
@@ -21,51 +27,28 @@ import SideBottonVue from '../ui/sideBar/SideBotton.vue'
 
 <style scoped lang="scss">
 .menu {
-  position: relative;
   width: 100%;
   height: 100%;
+  filter: drop-shadow(0px 0px 15px rgba(0, 0, 0, 0.05));
+  background-color: $white-1;
 }
 .menu-container {
-  position: absolute;
+  position: sticky;
+  display: flex;
   width: 100%;
-  height: 100%;
+
   background-color: $white-1;
-  overflow-y: scroll;
+
+  /* top: 0;
+  bottom: 0; */
 }
 .menu-list {
+  padding: 10px;
   display: flex;
   gap: 10px;
   flex-direction: column;
   align-items: center;
-  padding-top: 10px;
-  padding-bottom: 10px;
-}
-.menu-items {
-  width: 45px;
-  height: 42px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 4px;
-  filter: drop-shadow(0px 0px 15px rgba(0, 0, 0, 0.05));
-}
-
-.menu-items--bg-none {
-  width: 45px;
-  height: 42px;
-  display: flex;
-  justify-content: center;
-  align-items: end;
-  border-radius: 4px;
-  color: $gray-1;
-}
-.menu-items--active {
-  background-color: $violet-1;
-  color: $white-1;
-}
-
-.menu-items--bg {
   background-color: $white-1;
-  color: $gray-1;
+  height: 100%;
 }
 </style>

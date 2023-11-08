@@ -6,8 +6,11 @@
     <template v-if="icon === 'smart-enroller'">
       <IconPlus />
     </template>
-    <template v-if="icon === 'dropout-shield'">
+    <template v-if="icon === 'retention-partner'">
       <IconUpdate />
+    </template>
+    <template v-if="icon === 'dropout-shield'">
+      <IconArrow />
     </template>
     <template v-if="icon === 'risk-detector'">
       <IconGrowVue />
@@ -42,6 +45,7 @@ import IconStatistics from '@/components/icons/menuIcons/IconStatistics.vue'
 import IconStatisticsMoreVue from '@/components/icons/menuIcons/IconStatisticsMore.vue'
 import IconUpdate from '@/components/icons/menuIcons/IconUpdate.vue'
 import { type ISideIcon } from '../../../interfaces/ISideMenu'
+import IconArrow from '@/components/icons/menuIcons/IconArrow.vue'
 
 const props = defineProps<ISideIcon>()
 </script>

@@ -39,6 +39,7 @@ watch(activeTabHash, () => {
   padding: 15px;
   background-color: $white-1;
   border-bottom-right-radius: 6px;
+  border-top-right-radius: 6px;
   border-bottom-left-radius: 6px;
 }
 </style>
