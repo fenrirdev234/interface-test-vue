@@ -4,7 +4,7 @@
       class="timeline-item-icon__content"
       :class="{
         'timeline-item-icon--none':
-          index !== 0 && card_item.time?.month === props.data[index - 1].time?.month
+          props.data && index !== 0 && card_item.time?.month === props.data[index - 1].time?.month
       }"
     >
       <div :class="{ 'timeline-item-icon__line': index > 0 }" />
@@ -13,7 +13,7 @@
     <p
       :class="{
         'timeline-item-icon--none':
-          index !== 0 && card_item.time?.month === props.data[index - 1].time?.month
+          index !== 0 && props.data && card_item.time?.month === props.data[index - 1].time?.month
       }"
       class="timeline__month"
     >
@@ -24,7 +24,10 @@
       <div v-if="index > 0" class="timeline-item-icon__line--top" />
 
       <TimelineIcons :type="card_item.type" />
-      <div v-if="index < props.data.length - 1" class="timeline-item-icon__line--bottom" />
+      <div
+        v-if="props.data && index < props.data.length - 1"
+        class="timeline-item-icon__line--bottom"
+      />
     </div>
     <div class="timeline__item">
       <TimeLineCard
@@ -41,18 +44,13 @@
 </template>
 
 <script setup lang="ts">
-import { type ITimeline } from '../../../interfaces/ITimeline'
+import { type ITimelineData } from '../../../interfaces/ITimeline'
 
 import TimeLineCard from './TimeLineCard.vue'
 import TimelineIcons from './TimelineIcons.vue'
 
-/* :class="{
-        'timeline-item-icon--none':
-          index !== 0 && card_item.time?.month === props.data[index - 1].time?.month
-      }" */
-
 const props = defineProps({
-  data: { type: Array<ITimeline>, default: [] }
+  data: { type: Array<ITimelineData>, require: true }
 })
 </script>
 

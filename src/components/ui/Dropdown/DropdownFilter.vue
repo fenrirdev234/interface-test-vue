@@ -1,7 +1,7 @@
 <template>
   <div class="dropdown">
     <button ref="ignoreTarget" class="dropdown__button" @click="onClickOpen">
-      <span class="dropdown__title">{{ title }}</span>
+      <span class="dropdown__title" v-if="title">{{ title }}</span>
       <div :class="{ 'dropdown__arrow--up': isOpen, 'dropdown__arrow--down': !isOpen }">
         <IconArrowSolid />
       </div>
@@ -26,31 +26,33 @@
 import { ref, type Ref } from 'vue'
 import { onClickOutside } from '@vueuse/core'
 import IconArrowSolid from '@/components/icons/homeIcons/IconArrowSolid.vue'
-import { type IDropdownProps } from '../../../interfaces/IDropdown'
+import type { IDropdownFilterProps } from '@/interfaces/IDropdown'
 
-const props = withDefaults(defineProps<IDropdownProps>(), {
-  initialValue: () => ({ name: '', id: '' }),
-  data: () => [{ name: '', id: '' }]
-})
+const props = defineProps<IDropdownFilterProps>()
 
 const emit = defineEmits<{ changeSelected: [value: string] }>()
 
-const seleted: Ref<string> = ref(props.initialValue.id)
-const title: Ref<string> = ref(props.initialValue.name)
+const seleted: Ref<string> = ref('')
+const title: Ref<string> = ref(props.title)
+
 const isOpen: Ref<boolean> = ref(false)
 const target = ref(null)
 const ignoreTarget = ref(null)
 
+const onClickOpen = () => {
+  isOpen.value = !isOpen.value
+}
 const selectItem = (id: string, name: string): void => {
-  if (id !== seleted.value) {
+  if (id === seleted.value) {
+    seleted.value = ''
+    title.value = props.title
+    emit('changeSelected', '')
+  } else {
     seleted.value = id
     title.value = name
     emit('changeSelected', id)
   }
   onClickOpen()
-}
-const onClickOpen = () => {
-  isOpen.value = !isOpen.value
 }
 
 onClickOutside(
@@ -94,6 +96,7 @@ onClickOutside(
   width: 100%;
   background-color: $white-1;
   top: 55px;
+  z-index: 3;
 }
 .dropdown__item {
   padding-top: 4px;
@@ -107,8 +110,12 @@ onClickOutside(
   }
 }
 .dropdown__title {
+  max-width: 14ch;
   padding-right: 16px;
   font-size: 12px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 }
 .dropdown__arrow--up {
   transition: all 0.4s ease;

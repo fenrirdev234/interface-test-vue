@@ -3,186 +3,72 @@
     <header class="header-timeline">
       <h4 class="header-timeline__title">Timeline</h4>
       <div class="timeline__filter">
-        <!-- <DropdownVueVue
-          :title="filterTimeline.filter.years.title"
-          :data="filterTimeline.filter.years.data"
+        <DropdownFilterVue
+          v-if="timelimeFilter"
+          :title="timelimeFilter.years.title"
+          :data="timelimeFilter.years.data"
           @change-selected="filterTime($event)"
         />
-        <DropdownVueVue
-          :title="filterTimeline.filter.users.title"
-          :data="filterTimeline.filter.users.data"
+        <DropdownFilterVue
+          v-if="timelimeFilter"
+          :title="timelimeFilter.users.title"
+          :data="timelimeFilter.users.data"
           @change-selected="filterUser($event)"
-        /> -->
+        />
+
         <SearchInputVue />
       </div>
     </header>
     <section class="timeline__content">
       <div class="timeline__item">
-        <TimelineContent :data="filterTimeline.data" />
+        <TimelineContent :data="dataValue" v-if="dataValue" />
       </div>
     </section>
   </div>
 </template>
 
 <script setup lang="ts">
-import DropdownVueVue from '../Dropdown/DropdownVue.vue'
+import DropdownFilterVue from '../Dropdown/DropdownFilter.vue'
 import SearchInputVue from '../SearchInput/SearchInput.vue'
 import TimelineContent from './TimelineContent.vue'
-import VueOverlayScollbarVue from '@/lib/vueOverlayScrollbar/VueOverlayScollbar.vue'
+import {
+  type ITimelineData,
+  type IFetchTimeline,
+  type ITimelineFilter
+} from '../../../interfaces/ITimeline'
+import { ref, type Ref, onMounted } from 'vue'
+import { useFetch } from '../../../hooks/useFetch'
+import { API_ENDPOINTS } from '../../../services/endpoint'
 
-const filterTimeline = {
-  data: [
-    {
-      autor: 'Gerardo Moyano',
-      type: 'email',
-      title: 'Email Sent',
-      message: 'Upselling email sent.',
-      link: 'View Email',
-      from: '',
-      time: {
-        date: 'Sep 23, 2023 - 1:45pm',
-        month: 'September',
-        year: '2023'
-      }
-    },
-    {
-      autor: 'Prof. Jean Charleton',
-      type: 'chat',
-      title: 'Chat Meeting',
-      message: 'Whatsapp chat meeting.',
-      link: '',
-      from: '',
-      time: {
-        date: 'Sep 2, 2023 - 1:45pm',
-        month: 'September',
-        year: '2023'
-      }
-    },
-    {
-      autor: 'Danielle Munchen Schollengberd',
-      type: 'academy',
-      title: 'LMS Assignment Deliveered',
-      message:
-        ' For:"Carrer Planning and Develoment" \nAssignment Name: "Quiz",  belivered ON Time.\n Grade: TBD',
-      link: '',
-      from: '',
-      time: {
-        date: 'Aug 5, 2023 - 5:33pm',
-        month: 'August',
-        year: '2023'
-      }
-    },
-    {
-      autor: '',
-      type: 'call',
-      title: 'Call',
-      message: 'Direct Call made to +52 55 22126164 \nCallDuration: 0 mins. 10 sec.',
-      link: '',
-      from: 'Gerardo Moyano',
-      time: {
-        date: 'Aug 4, 2023 - 1:45pm',
-        month: 'August',
-        year: '2023'
-      }
-    },
-    {
-      autor: 'Prof. Jean Charleton',
-      type: 'tag',
-      title: 'Tag Added',
-      message: 'Multiple Problems Injuried, Check, Late',
-      link: '',
-      from: 'Carrer Planning AndDevelipment',
-      time: {
-        date: 'Aug 3, 2023 - 5:33pm',
-        month: 'August',
-        year: '2023'
-      }
-    },
-    {
-      autor: 'Gerardo Moyano',
-      type: 'tag',
-      title: 'Tag Added',
-      message: 'Inactive,Control, Schorllarship',
-      link: '',
-      from: '',
-      time: {
-        date: 'Aug 2, 2023 - 1:45pm',
-        month: 'August',
-        year: '2023'
-      }
-    },
-    {
-      autor: 'Prof. Jean Charleton',
-      type: 'email',
-      title: 'Email Sent',
-      message: 'Upselling email sent',
-      link: 'View Email',
-      from: '',
-      time: {
-        date: 'Aug 2, 2023 - 1:45pm',
-        month: 'August',
-        year: '2023'
-      }
-    },
-    {
-      autor: '',
-      type: 'call',
-      title: 'Chat Meeting',
-      message: 'Direct Call made to +52 55 22126164 \nCall Duration: 1 mins. 22 sec.',
-      link: '',
-      from: 'Gerardo Moyano',
-      time: {
-        date: 'Jul 12, 2023 - 1:45pm',
-        month: 'July',
-        year: '2023'
-      }
-    },
-    {
-      autor: '',
-      type: 'call',
-      title: 'Chat Meeting',
-      message: 'Direct Call made to +52 55 22126164 \nCall Duration: 2 mins. 22 sec.',
-      link: '',
-      from: 'Gerardo Moyano',
-      time: {
-        date: 'Jul 12, 2023 - 1:45pm',
-        month: 'July',
-        year: '2023'
-      }
-    },
-    {
-      autor: 'Gerardo Moyano',
-      type: 'email',
-      title: 'Initial Contact',
-      message: 'Wellcome email sent.',
-      link: 'View Email',
-      from: '',
-      time: {
-        date: 'June 11, 2023 - 1:45pm',
-        month: 'June',
-        year: '2023'
-      }
-    }
-  ],
+const InitdataValue: Ref<ITimelineData[] | undefined> = ref([])
+const dataValue: Ref<ITimelineData[] | null | undefined> = ref(null)
+const timelimeFilter: Ref<ITimelineFilter | null | undefined> = ref(null)
 
-  filter: {
-    years: {
-      title: 'Year',
-      data: ['2023', '2022', '2021', '2020']
-    },
-    users: {
-      title: 'Filter by User',
-      data: ['Gerardo Moyano', 'Prof. Jean Charleton', 'Danielle Munchen Schollengberd', 'other']
-    }
+const filterTime = (value: string) => {
+  if (value.length > 0) {
+    const timeData = InitdataValue.value?.filter((item) => item.time.year === value)
+    dataValue.value = timeData
+  } else {
+    dataValue.value = InitdataValue.value
+  }
+}
+const filterUser = (value: string) => {
+  if (value.length > 0) {
+    const userData = InitdataValue.value?.filter((item) => item.autor === value)
+    dataValue.value = userData
+  } else {
+    dataValue.value = InitdataValue.value
   }
 }
 
-const filterTime = (value: string) => {
-  console.log(value)
-}
-const filterUser = (value: string) => {
-  console.log(value)
-}
+onMounted(async () => {
+  const { data } = await useFetch<IFetchTimeline>(API_ENDPOINTS.STUDENT_TIMELINE)
+
+  InitdataValue.value = data.value?.data
+
+  timelimeFilter.value = data.value?.filter
+  dataValue.value = data.value?.data
+})
 </script>
 
 <style scoped lang="scss">
@@ -217,3 +103,4 @@ const filterUser = (value: string) => {
   }
 } */
 </style>
+@/hooks/useApi @/hooks/useFetch@/hooks/useFetch

@@ -5,5 +5,10 @@ export interface IDropdown {
 
 export interface IDropdownProps {
   initialValue: IDropdown
-  data: Array<IDropdown>
+  data: IDropdown[]
+}
+
+export interface IDropdownFilterProps {
+  title: string
+  data: IDropdown[]
 }
