@@ -24,10 +24,9 @@
 import SideIcon from './SideIcon.vue'
 import { type ISideButton } from '../../../interfaces/ISideMenu'
 import { useCollapsedStore } from '../../../stores/isCollapsed'
+
 const props = defineProps<ISideButton>()
 const collapsed = useCollapsedStore()
-
-console.log(collapsed.isColapsed)
 </script>
 
 <style scoped lang="scss">

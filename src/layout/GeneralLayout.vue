@@ -20,6 +20,7 @@ import SideMenu from '@/components/generalSection/SideMenu.vue'
 .container {
   width: 100%;
 
+  min-height: 100vh;
   background-color: $gray-7;
   display: grid;
 

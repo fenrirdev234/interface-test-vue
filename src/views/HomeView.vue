@@ -25,8 +25,12 @@ import GeneralLayout from '@/layout/GeneralLayout.vue'
   height: 100%;
   width: 100%;
   max-width: 1600px;
+  display: flex;
+  justify-content: end;
 }
 .grid-home {
+  max-width: 1535px;
+  width: 100%;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr;
@@ -41,6 +45,8 @@ import GeneralLayout from '@/layout/GeneralLayout.vue'
 .section-home {
   grid-area: SectionHome;
   padding: 15px;
+  width: 100%;
+  height: 100%;
 }
 
 @include mediaMin(720px) {
@@ -62,12 +68,6 @@ import GeneralLayout from '@/layout/GeneralLayout.vue'
     grid-template-columns:
       minmax(auto, 390px)
       1fr;
-  }
-}
-
-@include mediaMin(1600px) {
-  .container-home {
-    padding-left: 65px;
   }
 }
 </style>

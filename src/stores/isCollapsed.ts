@@ -10,7 +10,7 @@ export const useCollapsedStore = defineStore('collapsed', () => {
   const toggleCloseSidebar = () => {
     isColapsed.value = false
   }
-  console.log(isColapsed)
+
   return {
     isColapsed,
     toggleOpenSidebar,

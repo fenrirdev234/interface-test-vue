@@ -1,7 +1,7 @@
 <template>
   <div>
     <TabsVue>
-      <TabVue title="Activity">
+      <TabVue type="none" title="Activity">
         <TimelineActivity />
       </TabVue>
       <TabVue title="Emails" type="email"> </TabVue>

@@ -106,6 +106,7 @@ const isOpen: Ref<boolean> = ref(props.active)
   padding-right: 12px;
 }
 .accordion__title-container {
+  width: 100%;
   display: flex;
   align-items: center;
   gap: 12px;
