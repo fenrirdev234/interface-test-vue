@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { inject, ref, type Ref, onBeforeMount, watch } from 'vue'
-import { type ITab } from '../../../interfaces/ITab'
+import { type ITabProps } from '../../../interfaces/ITab'
 
-const addTab = inject('addTab') as (tab: ITab) => void
+const addTab = inject('addTab') as (tab: ITabProps) => void
 const activeTabHash = inject('activeTabHash') as Ref<string>
 
 const props = defineProps({

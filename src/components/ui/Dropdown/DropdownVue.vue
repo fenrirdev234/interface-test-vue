@@ -1,7 +1,7 @@
 <template>
   <div class="dropdown">
     <button ref="ignoreTarget" class="dropdown__button" @click="onClickOpen">
-      <span class="dropdown__title">{{ title }}</span>
+      <span class="dropdown__title">{{ title }} </span>
       <div :class="{ 'dropdown__arrow--up': isOpen, 'dropdown__arrow--down': !isOpen }">
         <IconArrowSolid />
       </div>
@@ -35,14 +35,14 @@ const props = withDefaults(defineProps<IDropdownProps>(), {
 
 const emit = defineEmits<{ changeSelected: [value: string] }>()
 
-const seleted: Ref<string> = ref(props.initialValue.id)
-const title: Ref<string> = ref(props.initialValue.name)
+const seleted: Ref<string | undefined> = ref(props.initialValue.id)
+const title: Ref<string | undefined> = ref(props.initialValue.name)
 const isOpen: Ref<boolean> = ref(false)
 const target = ref(null)
 const ignoreTarget = ref(null)
 
-const selectItem = (id: string, name: string): void => {
-  if (id !== seleted.value) {
+const selectItem = (id: string | undefined, name: string | undefined): void => {
+  if (id && id !== seleted.value) {
     seleted.value = id
     title.value = name
     emit('changeSelected', id)

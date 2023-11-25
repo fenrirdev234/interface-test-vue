@@ -33,7 +33,7 @@ const props = defineProps<IDropdownFilterProps>()
 const emit = defineEmits<{ changeSelected: [value: string] }>()
 
 const seleted: Ref<string> = ref('')
-const title: Ref<string> = ref(props.title)
+const title: Ref<string | undefined> = ref(props.title)
 
 const isOpen: Ref<boolean> = ref(false)
 const target = ref(null)
@@ -42,15 +42,17 @@ const ignoreTarget = ref(null)
 const onClickOpen = () => {
   isOpen.value = !isOpen.value
 }
-const selectItem = (id: string, name: string): void => {
-  if (id === seleted.value) {
-    seleted.value = ''
-    title.value = props.title
-    emit('changeSelected', '')
-  } else {
-    seleted.value = id
-    title.value = name
-    emit('changeSelected', id)
+const selectItem = (id: string | undefined, name: string | undefined): void => {
+  if (id && name) {
+    if (id === seleted.value) {
+      seleted.value = ''
+      title.value = props.title
+      emit('changeSelected', '')
+    } else {
+      seleted.value = id
+      title.value = name
+      emit('changeSelected', id)
+    }
   }
   onClickOpen()
 }

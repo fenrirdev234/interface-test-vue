@@ -3,21 +3,24 @@
     <button
       class="accordion__button"
       :class="{
-        'accordion__button--active': isOpen,
+        'accordion__button--active': isOpen && collapsed.isColapsed,
         'accordion__button--weight': props.weigth
       }"
       @click="isOpen = !isOpen"
     >
       <div class="accordion__title-container">
         <div>
-          <SideIcon :icon="props.icon" :active="isOpen" />
+          <SideIcon :icon="props.icon" :active="isOpen && collapsed.isColapsed" />
         </div>
         <transition name="fade">
           <span v-if="collapsed.isColapsed" class="accordion__title">
             <span>{{ props.name }}</span>
             <div
               class="accordion__arrow"
-              :class="{ 'accordion__arrow--up': isOpen, 'accordion__arrow--down': !isOpen }"
+              :class="{
+                'accordion__arrow--up': isOpen && collapsed.isColapsed,
+                'accordion__arrow--down': !isOpen
+              }"
             >
               <IconArrowDirection />
             </div>
@@ -120,21 +123,31 @@ const isOpen: Ref<boolean> = ref(props.active)
   justify-content: center;
 }
 .accordion__arrow--up {
-  transition: all 0.4s ease;
+  transition: all 0.6s ease;
   transform: rotateZ(180deg);
 }
 .accordion__arrow--down {
-  transition: all 0.4s ease;
+  transition: all 0.6s ease;
   transform: rotateZ(0deg);
 }
 
 .accordion-content-a-enter-active,
 .accordion-content-a-leave-active {
-  transition: all 0.4s;
+  transition: all 0.2s;
 }
 .accordion-content-a-enter,
 .accordion-content-a-leave-to {
   opacity: 0;
   transform: translateY(-5px);
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.2s;
+}
+
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
 }
 </style>

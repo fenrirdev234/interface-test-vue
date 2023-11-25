@@ -16,7 +16,7 @@
           @change-selected="filterUser($event)"
         />
 
-        <SearchInputVue />
+        <SearchInputVue @changeSearch="filterSearch($event)" />
       </div>
     </header>
     <section class="timeline__content">
@@ -60,6 +60,19 @@ const filterUser = (value: string) => {
     dataValue.value = InitdataValue.value
   }
 }
+const filterSearch = (value: string) => {
+  if (value.length > 0) {
+    /* const userData = InitdataValue.value?.filter(
+      (item) => item.autor.toLocaleLowerCase() === value.toLocaleLowerCase()
+    ) */
+    const userData = InitdataValue.value?.filter((item) => {
+      return item.autor.toLocaleLowerCase().includes(value.toLocaleLowerCase())
+    })
+    dataValue.value = userData
+  } else {
+    dataValue.value = InitdataValue.value
+  }
+}
 
 onMounted(async () => {
   const { data } = await useFetch<IFetchTimeline>(API_ENDPOINTS.STUDENT_TIMELINE)
@@ -76,12 +89,12 @@ onMounted(async () => {
   display: flex;
   justify-content: space-between;
   align-items: center;
-
   flex-wrap: wrap;
 }
 .timeline__filter {
   display: flex;
   gap: 11px;
+  flex-wrap: wrap;
 }
 .header-timeline__title {
   color: $gray-1;
@@ -97,10 +110,9 @@ onMounted(async () => {
   flex-direction: column;
 }
 
-/* @include mediaMin(830px) {
-  .header-timeline {
-    flex-direction: row;
+@include mediaMin(420px) {
+  .timeline__filter {
+    flex-wrap: nowrap;
   }
-} */
+}
 </style>
-@/hooks/useApi @/hooks/useFetch@/hooks/useFetch

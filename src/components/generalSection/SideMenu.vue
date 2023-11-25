@@ -9,6 +9,7 @@
             icon="dashboard"
             :active="route.path === '/'"
           />
+          <SideMore />
           <SideBottonVue
             :weigth="true"
             name="Smart Enroller"
@@ -43,7 +44,6 @@
             :items="['My Reports', 'My Reports', 'My Reports']"
           />
 
-          <SideBottonVue name="Academy Offer" icon="academy-offer" :active="false" :weigth="true" />
           <SideBottonVue name="My report" icon="my-report" :active="false" :weigth="true" />
           <SideBottonVue
             name="custom Report"
@@ -65,6 +65,8 @@ import SideBottonVue from '../ui/sideBar/SideBotton.vue'
 import AccordionMenuVue from '@/components/ui/Accordion/AccordionMenuVue.vue'
 import { useCollapsedStore } from '../../stores/isCollapsed'
 import { onClickOutside } from '@vueuse/core'
+
+import SideMore from '../ui/sideBar/SideMore.vue'
 
 const target = ref(null)
 const collapsed = useCollapsedStore()

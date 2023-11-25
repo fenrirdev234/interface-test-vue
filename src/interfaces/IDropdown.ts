@@ -1,14 +1,14 @@
 export interface IDropdown {
-  name: string
-  id: string
+  name?: string
+  id?: string
 }
 
 export interface IDropdownProps {
-  initialValue: IDropdown
-  data: IDropdown[]
+  initialValue?: IDropdown
+  data?: IDropdown[]
 }
 
 export interface IDropdownFilterProps {
-  title: string
-  data: IDropdown[]
+  title?: string
+  data?: IDropdown[]
 }
