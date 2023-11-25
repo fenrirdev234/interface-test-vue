@@ -1,0 +1,70 @@
+{
+  "infoData": {
+    "name": "Danielle Munchen Schollengberg",
+    "regID": "AYSI32392",
+    "status": "Active",
+    "image": "./images/danielle.webp"
+  },
+  "studentData": {
+    "info": {
+      "period": "2023 - 1",
+      "status": "Alumno Regular",
+      "college": "Aldebaran",
+      "admission": "Centro Pre",
+      "segment": "Sin información",
+      "segmentDetail": "Sin información"
+    },
+    "risk": [
+      {
+        "subject": "Matemática",
+        "riskLevel": "Riesgo Sin Definir",
+        "score": "Sin Información"
+      },
+      {
+        "subject": "Química",
+        "riskLevel": "Riesgo Sin Definir",
+        "score": "Sin Información"
+      },
+      {
+        "subject": "Programación",
+        "riskLevel": "Riesgo Sin Definir",
+        "score": "Sin Información"
+      },
+      {
+        "subject": "Comunicación",
+        "riskLevel": "Riesgo Sin Definir",
+        "score": "Sin Información"
+      }
+    ]
+  },
+  "aboutData": {
+    "firstName": "Danielle",
+    "lastName": "Munchen Schollengberg",
+    "email": "danielle_munchen@gmail.com",
+    "phone": "+52 5522126164",
+    "country": "México",
+    "category": "Do Not Contact"
+  },
+  "carrerData": {
+    "career": [
+      {
+        "name": "Software  Engineering",
+        "id": "0398P",
+        "type": "Graduate",
+        "modality": "On-Campus",
+        "status": "Enrollment",
+        "studentId": "AYSI0123839",
+        "cohort": "A1 2023"
+      },
+      {
+        "name": "industrial Engineering",
+        "id": "1111",
+        "type": "Graduate",
+        "modality": "On-Campus",
+        "status": "Enrollment",
+        "studentId": "AYSI0123839",
+        "cohort": "A1 2023"
+      }
+    ]
+  }
+}

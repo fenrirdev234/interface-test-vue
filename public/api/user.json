@@ -1,0 +1,7 @@
+{
+  "name": "Hellen Smith",
+  "rol": "Admin",
+  "state": "available",
+  "image": "./images/hellenI.webp",
+  "notification": ["notication 1", "notication 2", "notication 3", "notication 4"]
+}

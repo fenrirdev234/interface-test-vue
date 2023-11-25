@@ -1,0 +1,35 @@
+{
+  "regID": "AYSI32392",
+  "event": [
+    {
+      "type": "activity",
+      "title": "7 days ago",
+      "detail": "Nov 29, 2023",
+      "moreDetail": "2:43pm"
+    },
+    {
+      "type": "contact",
+      "title": "2 days ago",
+      "detail": "Nov 29, 2023",
+      "moreDetail": "2:43pm"
+    },
+    {
+      "type": "country",
+      "title": "México",
+      "detail": "State",
+      "moreDetail": "Córdoba"
+    },
+    {
+      "type": "status",
+      "title": "Active",
+      "detail": "updated",
+      "moreDetail": "Nov 2, 2023"
+    },
+    {
+      "type": "age",
+      "title": "12 days",
+      "detail": "Created on",
+      "moreDetail": "Jan 2, 2023"
+    }
+  ]
+}
