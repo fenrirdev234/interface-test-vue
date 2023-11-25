@@ -3,7 +3,7 @@
     <article class="first-article">
       <nav class="main-nav">
         <a> Record Details </a><span> / </span>
-        <a>AYSI32392</a>
+        <a>{{ dataEvents?.regID }}</a>
       </nav>
       <div class="main-icons">
         <IconEditVue />
@@ -11,12 +11,12 @@
     </article>
     <TabsAlter>
       <TabAlter title="Overview">
-        <EventSection />
-        <OverviewSection />
+        <EventSection v-if="dataEvents" :eventData="dataEvents.event" />
       </TabAlter>
       <TabAlter title="Enrollment"></TabAlter>
       <TabAlter title="Academic"></TabAlter>
     </TabsAlter>
+    <OverviewSection />
   </section>
 </template>
 
@@ -28,6 +28,18 @@ import TabAlter from '@/components/ui/Tab/TabAlter.vue'
 import IconEditVue from '@/components/icons/homeIcons/IconEdit.vue'
 import OverviewSection from './Section/OverviewSection.vue'
 import EventSection from './Section/EventSection.vue'
+import { onMounted, ref, type Ref } from 'vue'
+import { useFetch } from '../../../hooks/useFetch'
+import { type IEvents } from '../../../interfaces/IEvents'
+import { API_ENDPOINTS } from '../../../services/endpoint'
+
+const dataEvents: Ref<IEvents | null> = ref(null)
+
+onMounted(async () => {
+  const { data } = await useFetch<IEvents>(API_ENDPOINTS.EVENT)
+
+  dataEvents.value = data.value
+})
 </script>
 
 <style scoped lang="scss">

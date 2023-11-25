@@ -8,11 +8,11 @@
 <script setup lang="ts">
 const props = defineProps({
   title: {
-    title: String,
+    type: String,
     default: ' '
   },
   content: {
-    title: String,
+    type: String,
     default: ' '
   }
 })

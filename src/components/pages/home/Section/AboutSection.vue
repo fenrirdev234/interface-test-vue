@@ -3,26 +3,26 @@
     <AccordionVue title="About">
       <div class="about-container">
         <ul class="about-items about-items--primary">
-          <ItemSection title="First Name" :content="data.firstName" />
-          <ItemSection title="Last Name" :content="data.lastName" />
+          <ItemSection title="First Name" :content="props.aboutData?.firstName" />
+          <ItemSection title="Last Name" :content="props.aboutData?.lastName" />
           <li class="about-item">
             <div class="about-item__email">
               <p>Email:</p>
               <button
                 class="about-item__icon"
-                @click="toastCopyMessage('email Copied', data.email)"
+                @click="toastCopyMessage('email Copied', props.aboutData?.email)"
               >
                 <IconPenVue />
               </button>
             </div>
-            <p>{{ data.email }}</p>
+            <p>{{ props.aboutData?.email }}</p>
           </li>
         </ul>
         <Divider />
         <ul class="about-items about-items--secundary">
-          <ItemSection title="Phone Number" :content="data.phone" />
-          <ItemSection title="Country" :content="data.country" />
-          <ItemSection title="Category" :content="data.category" />
+          <ItemSection title="Phone Number" :content="props.aboutData?.phone" />
+          <ItemSection title="Country" :content="props.aboutData?.country" />
+          <ItemSection title="Category" :content="props.aboutData?.category" />
         </ul>
       </div>
     </AccordionVue>
@@ -36,15 +36,13 @@ import Divider from '@/components/ui/divider/DividerVue.vue'
 import IconPenVue from '@/components/icons/homeIcons/IconPen.vue'
 import ItemSection from './ItemSection.vue'
 import { toastCopyMessage } from '@/lib/vueToastification/toastCopyMessage'
+import type { IAboutData } from '@/interfaces/IStudentInfo'
 
-const data = {
-  firstName: 'Danielle',
-  lastName: 'Munchen Schollengberg',
-  email: 'danielle_munchen@gmail.com',
-  phone: '+52 5522126164',
-  country: 'México',
-  category: 'Do Not Contact'
+interface IProps {
+  aboutData?: IAboutData
 }
+
+const props = defineProps<IProps>()
 </script>
 
 <style scoped lang="scss">

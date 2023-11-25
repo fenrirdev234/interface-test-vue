@@ -3,18 +3,18 @@
     <AccordionVue title="Sobre el Estudiante">
       <div class="student-container">
         <ul class="student-info">
-          <li>Período: {{ data.info.period }}</li>
-          <li>Status: {{ data.info.status }}</li>
-          <li>Colegio: {{ data.info.college }}</li>
-          <li>Mod. Admisión: {{ data.info.admission }}</li>
-          <li>Segmento: {{ data.info.segment }}</li>
-          <li>Segmento Detalle: {{ data.info.segmentDetail }}</li>
+          <li>Período: {{ props.studentData?.info.period }}</li>
+          <li>Status: {{ props.studentData?.info.status }}</li>
+          <li>Colegio: {{ props.studentData?.info.college }}</li>
+          <li>Mod. Admisión: {{ props.studentData?.info.admission }}</li>
+          <li>Segmento: {{ props.studentData?.info.segment }}</li>
+          <li>Segmento Detalle: {{ props.studentData?.info.segmentDetail }}</li>
         </ul>
         <div>
           <h4 class="risk-title">Detalle Riesgo de Ingreso:</h4>
           <DividerVue />
           <div class="risk-grid">
-            <template v-for="(item, index) in data.risk" :key="index">
+            <template v-for="(item, index) in props.studentData?.risk" :key="index">
               <div class="item-subject" :class="{ item__space: index > 0 }">
                 <p class="item-subject__title">{{ item.subject }}:</p>
               </div>
@@ -37,38 +37,13 @@
 import AccordionVue from '@/components/ui/Accordion/AccordionVue.vue'
 import SectionContainer from './SectionContainer.vue'
 import DividerVue from '@/components/ui/divider/DividerVue.vue'
-const data = {
-  info: {
-    period: '2023 - 1',
-    status: 'Alumno Regular',
-    college: 'Aldebaran',
-    admission: 'Centro Pre',
-    segment: 'Sin información',
-    segmentDetail: 'Sin información'
-  },
-  risk: [
-    {
-      subject: 'Matemática',
-      riskLevel: 'Riesgo Sin Definir',
-      score: 'Sin Información'
-    },
-    {
-      subject: 'Química',
-      riskLevel: 'Riesgo Sin Definir',
-      score: 'Sin Información'
-    },
-    {
-      subject: 'Programación',
-      riskLevel: 'Riesgo Sin Definir',
-      score: 'Sin Información'
-    },
-    {
-      subject: 'Comunicación',
-      riskLevel: 'Riesgo Sin Definir',
-      score: 'Sin Información'
-    }
-  ]
+
+import { type IStudentData } from '../../../../interfaces/IStudentInfo'
+
+interface Iprops {
+  studentData?: IStudentData
 }
+const props = defineProps<Iprops>()
 </script>
 
 <style scoped>

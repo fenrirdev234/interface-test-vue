@@ -5,17 +5,21 @@
         <ul class="career-items">
           <li class="career-item">
             <DropdownVue
-              :initial-value="{ name: data.career[0].name, id: data.career[0].id }"
-              :data="optionCareer(data.career)"
-              @change-selected="(select) => changeCareer(data.career, select)"
+              :initial-value="{
+                name: props.carrerData?.career[0].name,
+                id: props.carrerData?.career[0].id
+              }"
+              v-if="props.carrerData?.career"
+              :data="optionCareer(props.carrerData?.career)"
+              @change-selected="(select) => changeCareer(props.carrerData?.career, select)"
             />
           </li>
-          <ItemSection title="Career ID" :content="career.id" />
-          <ItemSection title="Type" :content="career.type" />
-          <ItemSection title="Modality" :content="career.modality" />
-          <ItemSection title="Status" :content="career.status" />
-          <ItemSection title="Student ID" :content="career.studentId" />
-          <ItemSection title="Cohort" :content="career.cohort" />
+          <ItemSection title="Career ID" :content="career?.id" />
+          <ItemSection title="Type" :content="career?.type" />
+          <ItemSection title="Modality" :content="career?.modality" />
+          <ItemSection title="Status" :content="career?.status" />
+          <ItemSection title="Student ID" :content="career?.studentId" />
+          <ItemSection title="Cohort" :content="career?.cohort" />
         </ul>
       </div>
     </AccordionVue>
@@ -28,6 +32,7 @@ import ItemSection from './ItemSection.vue'
 import SectionContainer from './SectionContainer.vue'
 import AccordionVue from '@/components/ui/Accordion/AccordionVue.vue'
 import { ref, type Ref } from 'vue'
+import type { ICarrerData } from '@/interfaces/IStudentInfo'
 interface ICareer {
   name: string
   id: string
@@ -42,42 +47,28 @@ interface ICareerOption {
   id: string
 }
 
-const data = {
-  career: [
-    {
-      name: 'Software  Engineering',
-      id: '0398P',
-      type: 'Graduate',
-      modality: 'On-Campus',
-      status: 'Enrollment',
-      studentId: 'AYSI0123839',
-      cohort: 'A1 2023'
-    },
-    {
-      name: 'industrial Engineering',
-      id: '1111',
-      type: 'Graduate',
-      modality: 'On-Campus',
-      status: 'Enrollment',
-      studentId: 'AYSI0123839',
-      cohort: 'A1 2023'
-    }
-  ]
+interface Iprops {
+  carrerData?: ICarrerData
 }
 
-const career: Ref<ICareer> = ref(data.career[0])
+const props = defineProps<Iprops>()
 
-const optionCareer = (data: ICareer[]): ICareerOption[] => {
-  const optionMap = data.map((item) => ({
+const career: Ref<ICareer | undefined> = ref(props.carrerData?.career[0])
+
+const optionCareer = (data: ICareer[] | undefined): ICareerOption[] | undefined => {
+  const optionMap = data?.map((item) => ({
     name: item.name,
     id: item.id
   }))
   return optionMap
 }
 
-const changeCareer = (carrers: ICareer[], selected: string) => {
-  const filtersResult = carrers.filter((careerfitler) => careerfitler.id === selected)
-  career.value = filtersResult[0]
+const changeCareer = (carrers: ICareer[] | undefined, selected: string | undefined) => {
+  if (carrers) {
+    const filtersResult = carrers?.filter((careerfitler) => careerfitler.id === selected)
+
+    career.value = filtersResult[0]
+  }
 }
 </script>
 

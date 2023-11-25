@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import MainHome from '@/components/pages/home/MainHome.vue'
 import MainSide from '@/components/pages/home/MainSide.vue'
-
 import GeneralLayout from '@/layout/GeneralLayout.vue'
 </script>
 

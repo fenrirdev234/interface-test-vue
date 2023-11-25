@@ -14,18 +14,30 @@
           </button>
           <button class="nav-icon">
             <IconBellVue />
-            <div class="notification-number">
-              <span>4</span>
+            <div class="notification-number" v-if="dataUser && dataUser?.notification.length > 0">
+              <span>
+                {{ dataUser?.notification.length }}
+              </span>
             </div>
           </button>
         </nav>
         <div class="name-content">
-          <div class="name">Hellen Smith</div>
-          <div class="job">Admin</div>
+          <div class="name">{{ dataUser?.name }}</div>
+          <div class="job">{{ dataUser?.rol }}</div>
         </div>
 
         <div class="image-container">
-          <div class="login-color" />
+          <div class="image-content">
+            <img class="info-image" :src="dataUser?.image" :alt="dataUser?.name" />
+          </div>
+          <div
+            class="login-color"
+            :class="{
+              'login-color__orange': dataUser?.state === 'occupied',
+              'login-color__green': dataUser?.state === 'available',
+              'login-color__none': dataUser?.state === 'inactive'
+            }"
+          />
         </div>
       </div>
     </div>
@@ -37,6 +49,18 @@ import IconBellVue from '../icons/headerIcons/IconBell.vue'
 import IconEdmachina from '../icons/headerIcons/IconEdmachina.vue'
 import IconGlobalVue from '../icons/headerIcons/IconGlobal.vue'
 import IconMoonVue from '../icons/headerIcons/IconMoon.vue'
+import { useFetch } from '../../hooks/useFetch'
+import { API_ENDPOINTS } from '@/services/endpoint'
+import { type IUser } from '../../interfaces/IUser'
+import { onMounted, ref, type Ref } from 'vue'
+
+const dataUser: Ref<IUser | null> = ref(null)
+
+onMounted(async () => {
+  const { data } = await useFetch<IUser>(API_ENDPOINTS.USER)
+
+  dataUser.value = data.value
+})
 </script>
 
 <style scoped lang="scss">
@@ -63,19 +87,43 @@ import IconMoonVue from '../icons/headerIcons/IconMoon.vue'
 .image-container {
   width: 33px;
   height: 33px;
+  border: 2px solid $violet-2;
   border-radius: 50%;
   background-color: $violet-2;
   position: relative;
+}
+.image-content {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  overflow: hidden;
+  object-position: center;
+}
+
+.info-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: right top;
 }
 .login-color {
   width: 11px;
   height: 11px;
   border-radius: 50%;
-  background-color: $green-1;
+  background-color: $white-1;
   position: absolute;
   border: 2px solid $white-1;
-  right: 0;
-  bottom: 0;
+  right: -2px;
+  bottom: -2px;
+}
+.login-color__green {
+  background-color: $green-1;
+}
+.login-color__orange {
+  background-color: $orange-1;
+}
+.login-color__none {
+  display: none;
 }
 .name-content {
   padding-right: 8px;
