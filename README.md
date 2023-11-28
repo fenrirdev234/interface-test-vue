@@ -52,6 +52,46 @@ npm run test:e2e
 npm run lint
 ```
 
+## Build the Docker Container on your local machine
+
+```sh
+docker-compose up --build --no-recreate -d
+```
+
+```sh
+docker-compose up -d
+```
+
+```sh
+docker-compose ps
+```
+
+## Build and start the Application
+
+```sh
+docker exec -it vite_docker sh
+```
+
+```sh
+npm i && npm run dev
+```
+
+## Or
+
+To install and run the dev server, we can have this
+
+```sh
+make first
+// make is the utility
+// first is command from the Makefile
+```
+
+And next time, we can always use
+
+```sh
+make start
+```
+
 ## Documentation
 
 ```sh
