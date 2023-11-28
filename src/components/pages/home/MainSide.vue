@@ -30,16 +30,12 @@ onMounted(async () => {
 })
 </script>
 
-<style
-  scoped
-  lang="scss
-"
->
-.side-container{
-width: 100%;
-  display:flex;
+<style scoped lang="scss">
+.side-container {
+  width: 100%;
+  display: flex;
   position: absolute;
-flex-direction: column;
-gap: 10px;
+  flex-direction: column;
+  gap: 10px;
 }
 </style>
