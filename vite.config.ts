@@ -9,7 +9,8 @@ export default defineConfig({
   plugins: [vue(), vueJsx()],
   server: {
     host: true,
-    port: 8000,
+    port: 8080,
+    strictPort: true,
     watch: {
       usePolling: true
     }
