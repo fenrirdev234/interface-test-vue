@@ -1,5 +1,7 @@
 import './assets/main.css'
 import 'vue-toastification/dist/index.css'
+import 'keen-slider/keen-slider.min.css'
+
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
 

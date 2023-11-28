@@ -1,25 +1,27 @@
 <template>
-  <div class="card-event">
-    <div class="card-event__principal-container">
-      <CardEventIconVue :type="props.type" />
-      <div>
-        <div class="card-event__type">
-          <p>
-            {{ typeTitle[props.type] }}
+  <div class="keen-slider__slide">
+    <div class="card-event">
+      <div class="card-event__principal-container">
+        <CardEventIconVue :type="props.type" />
+        <div>
+          <div class="card-event__type">
+            <p>
+              {{ typeTitle[props.type] }}
+            </p>
+            <div v-if="props.type === 'status'"><IconGear /></div>
+          </div>
+          <p class="card-event__title">
+            {{ props.title }}
           </p>
-          <div v-if="props.type === 'status'"><IconGear /></div>
         </div>
-        <p class="card-event__title">
-          {{ props.title }}
+      </div>
+      <Divider />
+      <div class="card-event__detail">
+        <p>{{ props.detail }}</p>
+        <p>
+          {{ props.moreDetail }}
         </p>
       </div>
-    </div>
-    <Divider />
-    <div class="card-event__detail">
-      <p>{{ props.detail }}</p>
-      <p>
-        {{ props.moreDetail }}
-      </p>
     </div>
   </div>
 </template>
@@ -42,14 +44,16 @@ const typeTitle = {
 
 <style scoped lang="scss">
 .card-event {
-  width: 150px;
-  margin-right: 20px;
-  background-color: $white-1;
-  padding: 10px;
-  border-radius: 6px;
-  filter: drop-shadow(0px 0px 15px rgba(0, 0, 0, 0.05));
-}
+  width: 207px;
+  padding: 15px;
 
+  background-color: $white-1;
+
+  border-radius: 6px;
+}
+.keen-slider__slide {
+  overflow: visible !important;
+}
 .card-event__title {
   font-weight: 600;
   font-size: 16px;
@@ -86,18 +90,5 @@ const typeTitle = {
   justify-content: space-between;
   align-items: center;
   padding-bottom: 9px;
-}
-/* @include mediaMin(720px) {
-  .card-event {
-    width: px;
-    padding: 15px;
-  }
-} */
-
-@include mediaMin(1120px) {
-  .card-event {
-    width: 207px;
-    padding: 15px;
-  }
 }
 </style>
