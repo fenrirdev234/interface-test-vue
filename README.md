@@ -100,9 +100,21 @@ npm run storybook
 
 ## Tech Stack
 
-**Client:** React, Redux, TailwindCSS
+- [Vue.js](https://vuejs.org/) - [🛠️](https://stackshare.io/vue-js) - [🐙](https://github.com/vuejs/vue) - An approachable core library that focuses on the view layer only.
+- [TypeScript](https://www.typescriptlang.org/) - [🛠️](https://stackshare.io/typescript) - [🐙](https://github.com/Microsoft/TypeScript) - A typed superset of JavaScript that compiles to plain JavaScript.
+- [Pinia](https://pinia.vuejs.org/) - [🐙](https://github.com/vuejs/pinia) - Intuitive, type safe, light and flexible Store for Vue using the composition api with DevTools support.
 
-**Server:** Node, Express
+- [Vue Router](https://router.vuejs.org/) - [🐙](https://github.com/vuejs/vue-router) - Vue Router is the official router for Vue.js.
+- [Sass](https://sass-lang.com/) - [🛠️](https://stackshare.io/sass) - [🐙](https://github.com/sass/sass) - Storybook is a frontend workshop for building UI components and pages in isolation. Thousands of teams use it for UI development, testing, and documentation.
+- [Storybook](https://storybook.js.org/) - [🛠️](https://stackshare.io/storybook) - [🐙](https://github.com/storybookjs/storybook) - Sass is an extension of CSS3, adding nested rules, variables, mixins, selector inheritance, and more. It's translated to well-formatted, standard CSS using the command line tool or a web-framework plugin.
+- [Prettier](https://prettier.io/) - [🛠️](https://stackshare.io/prettier) - [🐙](https://github.com/prettier/prettier) - Prettier is an opinionated code formatter. It enforces a consistent style by parsing your code and re-printing it with its own rules that take the maximum line length into account, wrapping code when necessary.
+- [Eslint](https://eslint.org/) - [🛠️](https://stackshare.io/eslint) - [🐙](https://github.com/eslint/eslint) - ESLint is a tool for identifying and reporting on patterns found in ECMAScript/JavaScript code.
+
+- [Vite](https://vitejs.dev/) - [🛠️](https://stackshare.io/vite) - [🐙](https://github.com/vitejs/vite) - Vite is a new breed of frontend build tooling that significantly improves the frontend development experience.
+
+- [Vitest](https://vitest.dev/) - [🛠️](https://stackshare.io/vitest) - [🐙](https://github.com/vitest-dev/vitest) - Next generation testing framework powered by Vite.
+
+- [Cypress](https://www.cypress.io/) - [🛠️](https://stackshare.io/cypress) - [🐙](https://github.com/cypress-io/cypress) - Fast, easy and reliable testing for anything that runs in a browser.
 
 ## Roadmap
 
