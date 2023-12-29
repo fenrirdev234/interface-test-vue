@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="timeline-container">
     <header class="header-timeline">
       <h4 class="header-timeline__title">Timeline</h4>
       <div class="timeline__filter">
@@ -91,15 +91,20 @@ onMounted(async () => {
   align-items: center;
   flex-wrap: wrap;
 }
+.timeline-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
 .timeline__filter {
   display: flex;
-  gap: 11px;
+  gap: 10px;
   flex-wrap: wrap;
 }
 .header-timeline__title {
   color: $gray-1;
-  font-weight: 600;
-  font-size: 12px;
+  font-size: 14px;
 }
 
 .timeline__content {

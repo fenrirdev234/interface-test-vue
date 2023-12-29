@@ -58,8 +58,9 @@ const props = defineProps({
 .timeline__container {
   width: 100%;
   display: grid;
-  grid-template-columns: 35px 1fr;
+  grid-template-columns: auto 1fr;
   grid-template-rows: 1fr;
+  column-gap: 10px;
   grid-template-areas: 'side main';
 }
 
@@ -73,11 +74,10 @@ const props = defineProps({
 .timeline__month {
   grid-area: 'main';
   width: 100%;
-  padding-top: 12px;
-  padding-bottom: 12px;
+  padding: 5px 10px;
+
   font-size: 12px;
   color: $violet-2;
-  font-weight: 600;
 }
 .timeline-item-icon__line {
   width: 2px;

@@ -6,7 +6,7 @@
         <span v-if="props.from"> from {{ props.from }} </span>
         <span v-if="props.autor"> by {{ props.autor }} </span>
       </h5>
-      <p>
+      <p class="timeline__date">
         {{ props.date }}
       </p>
     </div>
@@ -28,12 +28,13 @@ const props = defineProps<ITimelineCard>()
 .timeline__card {
   width: 100%;
   background-color: $gray-8;
-  border-radius: 5px;
-  padding: 12px 10px;
-  font-size: 10px;
-  font-weight: 700;
-  margin-top: 2.5px;
-  margin-bottom: 2.5px;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
+  font-size: 12px;
+  margin: 2.5px 0px;
 }
 
 .timeline__title {
@@ -44,15 +45,18 @@ const props = defineProps<ITimelineCard>()
   display: flex;
   justify-content: space-between;
 }
+.timeline__date {
+  color: $gray-2;
+}
 .timeline__message {
   color: $gray-2;
-  padding-top: 16px;
   display: flex;
   white-space: pre-line;
-  line-height: 15px;
+  line-height: 21px;
 }
 
 .timeline__message a {
+  margin-left: 5px;
   color: $violet-2;
 }
 </style>
