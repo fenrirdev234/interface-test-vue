@@ -73,19 +73,17 @@ onClickOutside(
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-weight: 600;
-  border: 2px solid;
+  border: 1px solid;
   border-radius: 5px;
   color: $gray-1;
   border-color: $gray-6;
-  padding-top: 14px;
-  padding-bottom: 14px;
-  padding-left: 14px;
-  padding-right: 20px;
+  padding: 7px 15px;
+  font-size: 12px;
+  font-weight: 700;
 }
 .dropdown__content {
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding: 6px 0px;
+
   border: 2px solid;
   border-radius: 5px;
   color: $gray-1;
@@ -93,23 +91,19 @@ onClickOutside(
   position: absolute;
   width: 100%;
   background-color: $white-1;
-  top: 55px;
+  top: 40px;
 }
 .dropdown__item {
-  padding-top: 4px;
-  padding-bottom: 4px;
+  padding: 4px 0px;
   width: 100%;
   display: flex;
   justify-content: center;
-  font-size: 9px;
+  font-size: 12px;
   &:hover {
     background-color: $gray-6;
   }
 }
-.dropdown__title {
-  padding-right: 16px;
-  font-size: 12px;
-}
+
 .dropdown__arrow--up {
   transition: all 0.4s ease;
   transform: rotateZ(180deg);

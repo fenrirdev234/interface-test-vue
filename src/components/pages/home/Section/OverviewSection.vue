@@ -1,13 +1,11 @@
 <template>
-  <div>
-    <TabsVue>
-      <TabVue type="none" title="Activity">
-        <TimelineActivity />
-      </TabVue>
-      <TabVue title="Emails" type="email"> </TabVue>
-      <TabVue title="Calls" type="call"></TabVue>
-    </TabsVue>
-  </div>
+  <TabsVue>
+    <TabVue type="none" title="Activity">
+      <TimelineActivity />
+    </TabVue>
+    <TabVue title="Emails" type="email"> </TabVue>
+    <TabVue title="Calls" type="call"></TabVue>
+  </TabsVue>
 </template>
 
 <script setup lang="ts">

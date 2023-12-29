@@ -43,10 +43,6 @@ const isOpen: Ref<boolean> = ref(true)
   align-items: center;
   justify-content: space-between;
   color: $gray-1;
-  padding-right: 5px;
-  padding-left: 5px;
-  padding-top: 4px;
-  padding-bottom: 4px;
 }
 .accordion__content {
   padding-top: 15px;

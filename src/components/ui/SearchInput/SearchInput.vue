@@ -23,20 +23,17 @@ watch(searchText, () => {
 .search-container {
   display: flex;
   justify-content: space-between;
-  border: 2px solid $gray-6;
+  border: 1px solid $gray-6;
   border-radius: 5px;
   align-items: center;
-  padding-left: 14px;
-  padding-right: 16px;
-  padding-top: 14px;
-  padding-bottom: 14px;
+  padding: 7px 15px;
+
   width: 100%;
   max-width: 140px;
 }
 .search-input {
   width: 100%;
   font-size: 12px;
-  font-weight: 600;
   color: $gray-1;
   overflow: hidden;
   white-space: nowrap;

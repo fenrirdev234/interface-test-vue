@@ -67,8 +67,7 @@ const props = defineProps<Iprops>()
   display: grid;
   grid-template-columns: auto 1fr;
   grid-template-rows: 1fr;
-  padding-bottom: 20px;
-  padding-top: 20px;
+  padding: 20px 0px;
   margin-bottom: 10px;
   gap: 15px;
 }

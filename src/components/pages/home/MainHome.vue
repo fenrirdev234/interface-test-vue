@@ -45,23 +45,19 @@ onMounted(async () => {
 <style scoped lang="scss">
 .main-nav {
   color: $violet-2;
-  font-size: 13px;
-  font-weight: 600;
+  font-size: 14px;
   display: flex;
   gap: 4px;
+  align-items: center;
 }
 .first-article {
   display: flex;
   justify-content: space-between;
-  padding-top: 14px;
-  padding-right: 13px;
-  padding-bottom: 14px;
 }
 .main-icons {
-  width: 16px;
-  height: 16px;
   color: $gray-1;
   @include pseudoActive;
+  margin: 10px;
 }
 
 .main-section {

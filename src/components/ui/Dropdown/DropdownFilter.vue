@@ -1,7 +1,7 @@
 <template>
   <div class="dropdown">
     <button ref="ignoreTarget" class="dropdown__button" @click="onClickOpen">
-      <span class="dropdown__title" v-if="title">{{ title }}</span>
+      <p class="dropdown__title" v-if="title">{{ title }}</p>
       <div :class="{ 'dropdown__arrow--up': isOpen, 'dropdown__arrow--down': !isOpen }">
         <IconArrowSolid />
       </div>
@@ -73,36 +73,29 @@ onClickOutside(
   position: relative;
 }
 .dropdown__button {
-  width: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  font-weight: 600;
-  border: 2px solid;
+  gap: 10px;
+  border: 1px solid;
   border-radius: 5px;
   color: $gray-1;
   border-color: $gray-6;
-  padding-top: 14px;
-  padding-bottom: 14px;
-  padding-left: 14px;
-  padding-right: 20px;
+  padding: 7px 15px;
 }
 .dropdown__content {
-  padding-top: 6px;
-  padding-bottom: 6px;
-  border: 2px solid;
+  padding: 6px 0px;
+  border: 1px solid;
   border-radius: 5px;
   color: $gray-1;
   border-color: $gray-6;
   position: absolute;
   width: 100%;
   background-color: $white-1;
-  top: 55px;
+  top: 40px;
   z-index: 3;
 }
 .dropdown__item {
-  padding-top: 4px;
-  padding-bottom: 4px;
+  padding: 4px 0px;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -112,12 +105,11 @@ onClickOutside(
   }
 }
 .dropdown__title {
-  max-width: 14ch;
-  padding-right: 16px;
   font-size: 12px;
-  text-overflow: ellipsis;
-  overflow: hidden;
   white-space: nowrap;
+}
+.dropdown__arrow {
+  width: 10px;
 }
 .dropdown__arrow--up {
   transition: all 0.4s ease;

@@ -1,27 +1,25 @@
 <template>
-  <div class="keen-slider__slide">
-    <div class="card-event">
-      <div class="card-event__principal-container">
-        <CardEventIconVue :type="props.type" />
-        <div>
-          <div class="card-event__type">
-            <p>
-              {{ typeTitle[props.type] }}
-            </p>
-            <div v-if="props.type === 'status'"><IconGear /></div>
-          </div>
-          <p class="card-event__title">
-            {{ props.title }}
+  <div class="card-event">
+    <div class="card-event__principal-container">
+      <CardEventIconVue :type="props.type" />
+      <div>
+        <div class="card-event__type">
+          <p>
+            {{ typeTitle[props.type] }}
           </p>
+          <div v-if="props.type === 'status'"><IconGear /></div>
         </div>
-      </div>
-      <Divider />
-      <div class="card-event__detail">
-        <p>{{ props.detail }}</p>
-        <p>
-          {{ props.moreDetail }}
+        <p class="card-event__title">
+          {{ props.title }}
         </p>
       </div>
+    </div>
+    <Divider />
+    <div class="card-event__detail">
+      <p>{{ props.detail }}</p>
+      <p>
+        {{ props.moreDetail }}
+      </p>
     </div>
   </div>
 </template>
@@ -44,51 +42,39 @@ const typeTitle = {
 
 <style scoped lang="scss">
 .card-event {
-  width: 207px;
   padding: 15px;
-
   background-color: $white-1;
-
   border-radius: 6px;
+  @include shadowMix;
+  max-width: 207px;
+  width: 100%;
 }
-.keen-slider__slide {
-  overflow: visible !important;
-}
+
 .card-event__title {
-  font-weight: 600;
-  font-size: 16px;
+  font-size: 18px;
   color: $gray-1;
+  text-align: end;
 }
 .card-event__type {
-  height: 14px;
-  font-weight: 600;
-
   color: $gray-1;
   justify-content: end;
   align-items: center;
   display: flex;
-  font-size: 10px;
-  gap: 6px;
-}
-.card-event__type p {
-  display: flex;
-  height: auto;
-  font-size: 10px;
-  height: 10px;
+  font-size: 14px;
+  gap: 5px;
 }
 
 .card-event__detail {
-  font-size: 12px;
+  font-size: 14px;
   color: $gray-1;
-  font-weight: 600;
   display: flex;
   justify-content: space-between;
-  padding-top: 15px;
+  padding-top: 10px;
 }
 .card-event__principal-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-bottom: 9px;
+  padding-bottom: 10px;
 }
 </style>
