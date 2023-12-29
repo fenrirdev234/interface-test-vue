@@ -12,7 +12,7 @@
             @click="toastCopyMessage('Reg. ID Copied', props.infoData?.regID)"
             class="info-data__button-id"
           >
-            <IconCopy />
+            <IconContentCopy width="18" height="18" />
           </button>
         </div>
         <p class="info-status">Status: {{ props.infoData?.status }}</p>
@@ -42,6 +42,7 @@
 </template>
 
 <script setup lang="ts">
+import IconContentCopy from '@material-design-icons/svg/filled/content_copy.svg?component'
 import IconCopy from '@/components/icons/homeIcons/IconCopy.vue'
 import SectionContainer from './SectionContainer.vue'
 import IconMore from '@/components/icons/menuIcons/IconMore.vue'
@@ -66,8 +67,9 @@ const props = defineProps<Iprops>()
   display: grid;
   grid-template-columns: auto 1fr;
   grid-template-rows: 1fr;
-  padding-bottom: 42px;
+  padding-bottom: 20px;
   padding-top: 20px;
+  margin-bottom: 10px;
   gap: 15px;
 }
 .info-data__button-id {
@@ -75,8 +77,8 @@ const props = defineProps<Iprops>()
 }
 
 .info-data__image-container {
-  width: 66px;
-  height: 66px;
+  width: 65px;
+  height: 65px;
   background-color: $green-2;
   border-radius: 50%;
   overflow: hidden;
@@ -88,21 +90,23 @@ const props = defineProps<Iprops>()
   height: 100%;
   object-fit: contain;
   object-position: right top;
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
 }
 
 .info-data__container {
   color: $gray-1;
-  font-weight: 600;
-
-  padding-top: 4px;
+  padding-top: 5px;
+  font-size: 16px;
 }
 
 .info-data__name {
   color: $violet-1;
-  padding-bottom: 10px;
+  padding-bottom: 5px;
   width: auto;
   display: flex;
   text-wrap: wrap;
+  font-size: 18px;
 }
 .info-status {
   display: inline-block;
@@ -111,7 +115,9 @@ const props = defineProps<Iprops>()
 .info-data__id {
   display: flex;
   justify-content: space-between;
-  padding-bottom: 15px;
+  padding-bottom: 5px;
+  margin-bottom: 5px;
+  font-size: 16px;
 }
 
 .items-info {

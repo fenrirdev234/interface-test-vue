@@ -7,7 +7,7 @@
 <style scoped lang="scss">
 .divider {
   width: 100%;
-  height: 2px;
+  height: 1px;
   background-color: $gray-5;
 }
 </style>

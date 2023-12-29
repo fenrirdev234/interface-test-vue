@@ -3,12 +3,41 @@
     <AccordionVue title="Sobre el Estudiante">
       <div class="student-container">
         <ul class="student-info">
-          <li>Período: {{ props.studentData?.info.period }}</li>
-          <li>Status: {{ props.studentData?.info.status }}</li>
-          <li>Colegio: {{ props.studentData?.info.college }}</li>
-          <li>Mod. Admisión: {{ props.studentData?.info.admission }}</li>
-          <li>Segmento: {{ props.studentData?.info.segment }}</li>
-          <li>Segmento Detalle: {{ props.studentData?.info.segmentDetail }}</li>
+          <li class="student-info__item">
+            Período:<span class="student-info__item-span">
+              {{ props.studentData?.info.period }}
+            </span>
+          </li>
+          <li>
+            Status:
+            <span class="student-info__item-span">
+              {{ props.studentData?.info.status }}
+            </span>
+          </li>
+          <li>
+            Colegio:
+            <span class="student-info__item-span">
+              {{ props.studentData?.info.college }}
+            </span>
+          </li>
+          <li>
+            Mod. Admisión:
+            <span class="student-info__item-span">
+              {{ props.studentData?.info.admission }}
+            </span>
+          </li>
+          <li>
+            Segmento:
+            <span class="student-info__item-span">
+              {{ props.studentData?.info.segment }}
+            </span>
+          </li>
+          <li>
+            Segmento Detalle:
+            <span class="student-info__item-span">
+              {{ props.studentData?.info.segmentDetail }}
+            </span>
+          </li>
         </ul>
         <div>
           <h4 class="risk-title">Detalle Riesgo de Ingreso:</h4>
@@ -54,22 +83,30 @@ const props = defineProps<Iprops>()
 .student-info {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 10px;
   font-size: 12px;
-  font-weight: 600;
-  padding-bottom: 36px;
+  padding-bottom: 30px;
+}
+.student-info__item {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+.student-info__item-span {
+  line-height: 17px;
 }
 .risk-title {
-  font-weight: 600;
   font-size: 14px;
-  padding-bottom: 9px;
+  padding-bottom: 10px;
 }
+
 .risk-grid {
   display: grid;
-  grid-template-columns: auto 1fr;
+  grid-template-columns: 100px 1fr;
   grid-template-rows: 1fr;
   grid-template-areas: 'subject risk';
-  padding-top: 12px;
+  padding-top: 10px;
+  column-gap: 5px;
 }
 
 .item-subject {
@@ -78,10 +115,9 @@ const props = defineProps<Iprops>()
   flex-direction: column;
 
   font-size: 12px;
-  font-weight: 600;
 }
 .item__space {
-  padding-top: 15px;
+  padding-top: 10px;
 }
 .item-subject__title {
   display: flex;
@@ -91,7 +127,6 @@ const props = defineProps<Iprops>()
   width: 100%;
   grid-area: 'risk';
   font-size: 12px;
-  font-weight: 600;
-  padding-left: 12px;
+  line-height: 17px;
 }
 </style>

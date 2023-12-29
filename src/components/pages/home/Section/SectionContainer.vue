@@ -11,9 +11,7 @@
   width: 100%;
   border-radius: 6px;
   background-color: $white-1;
-  padding-right: 15px;
-  padding-left: 15px;
-  padding-top: 15px;
-  padding-bottom: 15px;
+  padding: 15px;
+  @include shadowMix;
 }
 </style>

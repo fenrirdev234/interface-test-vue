@@ -1,7 +1,7 @@
 <template>
   <li class="about-item">
-    <p class="about-item__title">{{ props.title }}:</p>
-    <p class="about-item__content">{{ props.content }}</p>
+    <p>{{ props.title }}:</p>
+    <p>{{ props.content }}</p>
   </li>
 </template>
 
@@ -22,9 +22,5 @@ const props = defineProps({
 .about-item {
   font-size: 12px;
   color: $gray-1;
-}
-
-.about-item__content {
-  line-height: 17px;
 }
 </style>

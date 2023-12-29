@@ -52,25 +52,26 @@ const props = defineProps<IProps>()
 .about-items {
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 10px;
 }
 .about-items--primary {
   padding-bottom: 5px;
 }
 .about-items--secundary {
-  padding-top: 12px;
-  padding-bottom: 4px;
+  padding-top: 10px;
 }
 .about-item {
   font-size: 12px;
-  font-weight: 600;
   color: $gray-1;
+}
+.about-item p {
+  line-height: 17px;
 }
 .about-item__title {
   padding-bottom: 6px;
 }
 .about-item__email {
-  padding-bottom: 12px;
+  padding-bottom: 5px;
   display: flex;
   justify-content: space-between;
   align-items: center;

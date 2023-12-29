@@ -42,7 +42,6 @@ const isOpen: Ref<boolean> = ref(true)
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-weight: 600;
   color: $gray-1;
   padding-right: 5px;
   padding-left: 5px;
@@ -51,7 +50,7 @@ const isOpen: Ref<boolean> = ref(true)
 }
 .accordion__content {
   padding-top: 15px;
-  padding-bottom: 6px;
+
   color: $gray-1;
   width: 100%;
 }
@@ -61,7 +60,8 @@ const isOpen: Ref<boolean> = ref(true)
 }
 .accordion__title {
   padding-left: 5px;
-  font-size: 12px;
+  font-size: 14px;
+  font-weight: 700;
 }
 .accordion__title-container {
   display: flex;
@@ -70,11 +70,12 @@ const isOpen: Ref<boolean> = ref(true)
 
 .accordion__arrow--up {
   transition: all 0.4s ease;
-  transform: rotateZ(180deg);
+  transform: rotateZ(0deg);
 }
 .accordion__arrow--down {
   transition: all 0.4s ease;
-  transform: rotateZ(0deg);
+
+  transform: rotateZ(180deg);
 }
 .accordion__item--selected {
   background-color: $gray-6;
