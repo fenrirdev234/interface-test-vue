@@ -1,17 +1,24 @@
 <template>
-  <div class="footer"><p>COPYRIGHT © 2023 EdMachina</p></div>
+  <div class="footer">
+    <p>COPYRIGHT © 2023</p>
+    <p>EdMachina</p>
+  </div>
 </template>
 
 <script setup lang="ts"></script>
 
 <style scoped lang="scss">
 .footer {
-  background-color: $gray-4;
-  height: 52px;
-  font-weight: 600;
   display: flex;
+  background-color: $gray-4;
+  padding: 15px 21px;
+  align-items: flex-start;
+  gap: 10px;
   color: $gray-3;
-  padding-left: 20px;
+  padding-left: 21px;
   align-items: center;
+  gap: 6px;
+  line-height: 21px;
+  font-size: 14px;
 }
 </style>
