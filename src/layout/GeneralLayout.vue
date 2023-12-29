@@ -25,7 +25,7 @@ import SideMenu from '@/components/generalSection/SideMenu.vue'
   display: grid;
 
   grid-template-columns: 1fr;
-  grid-template-rows: 52px 1fr 51px;
+  grid-template-rows: 63px 1fr 51px;
   grid-template-areas:
     'header'
     'main'

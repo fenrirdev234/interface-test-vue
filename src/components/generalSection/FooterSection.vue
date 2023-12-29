@@ -15,7 +15,7 @@
   align-items: flex-start;
   gap: 10px;
   color: $gray-3;
-  padding-left: 21px;
+
   align-items: center;
   gap: 6px;
   line-height: 21px;

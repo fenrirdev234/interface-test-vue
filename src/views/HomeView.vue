@@ -34,7 +34,7 @@ import GeneralLayout from '@/layout/GeneralLayout.vue'
   grid-template-columns: 1fr;
   grid-template-rows: 1fr;
   padding: 15px;
-  gap: 15px;
+
   height: 100%;
   grid-template-areas: 'SectionHome';
 }
@@ -52,11 +52,11 @@ import GeneralLayout from '@/layout/GeneralLayout.vue'
 @include mediaMin(720px) {
   .grid-home {
     grid-template-columns:
-      minmax(auto, 320px)
+      minmax(auto, 280px)
       1fr;
     grid-template-rows: 1fr;
-
     grid-template-areas: 'sideHome SectionHome';
+    gap: 15px;
   }
   .side-home {
     display: block;
@@ -68,6 +68,7 @@ import GeneralLayout from '@/layout/GeneralLayout.vue'
     grid-template-columns:
       minmax(auto, 375px)
       1fr;
+    gap: 15px;
   }
 }
 </style>
