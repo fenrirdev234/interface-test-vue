@@ -1,7 +1,13 @@
 <template>
   <section class="menu">
     <nav class="menu-container">
-      <button class="menu-position" ref="target">
+      <button
+        class="menu-position"
+        :class="{
+          'menu-shadow': collapsed.isColapsed === true
+        }"
+        ref="target"
+      >
         <ul class="menu-list">
           <SideBottonVue
             :weigth="false"
@@ -83,8 +89,12 @@ const closeMenu = () => {
 .menu {
   width: 100%;
   height: 100%;
-  filter: drop-shadow(0px 0px 15px rgba(0, 0, 0, 0.05));
+
   background-color: $white-1;
+}
+
+.menu-shadow {
+  box-shadow: 4px 0px 15px 0px rgba(0, 0, 0, 0.15);
 }
 .menu-container {
   display: flex;

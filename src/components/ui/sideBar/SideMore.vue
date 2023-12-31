@@ -1,9 +1,7 @@
 <template>
-  <li class="side-item">
+  <li class="side-item" :class="{ 'side-item--collased': !collapsed.isColapsed }">
     <transition name="fade">
-      <div class="side-icon" v-if="!collapsed.isColapsed">
-        <IconMoreVue />
-      </div>
+      <div class="side-icon material-icons-round" v-if="!collapsed.isColapsed">...</div>
     </transition>
 
     <transition name="fade">
@@ -14,38 +12,42 @@
 
 <script setup lang="ts">
 import { useCollapsedStore } from '../../../stores/isCollapsed'
-import IconMoreVue from '@/components/icons/menuIcons/IconMore.vue'
 
 const collapsed = useCollapsedStore()
 </script>
 
 <style scoped lang="scss">
 .side-item {
-  padding: 12px;
+  padding-top: 10px;
+
+  padding-right: 10px;
   width: 100%;
   display: flex;
   gap: 12px;
-  align-items: center;
+
   border-radius: 4px;
-  align-items: end;
+}
+.side-item--collased {
+  justify-content: center;
+  padding-left: 10px;
+}
+.side-item--no-collased {
+  justify-content: s;
 }
 .side-item__text {
   color: $gray-9;
   font-size: 12px;
   white-space: nowrap;
-  height: 22px;
   display: flex;
-  align-items: end;
   font-weight: 700;
   line-height: 18px;
 }
 .side-icon {
-  width: 22px;
-  height: 22px;
-
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 21px;
   color: $gray-1;
   display: flex;
-  align-items: end;
 }
 
 .fade-enter-active,

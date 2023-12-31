@@ -31,21 +31,23 @@ const collapsed = useCollapsedStore()
 
 <style scoped lang="scss">
 .side-item {
-  padding: 12px;
+  padding: 0px 10px;
   width: 100%;
   background-color: $white-1;
   display: flex;
   gap: 9px;
-
+  height: 42px;
   align-items: center;
   border-radius: 5px;
   filter: drop-shadow(0px 0px 15px rgba(0, 0, 0, 0.05));
 }
 .side-item__text {
   color: $gray-1;
+  width: 177px;
   font-size: 15px;
   white-space: nowrap;
   line-height: 24px;
+  text-align: start;
 }
 
 .side-item__text--weight {

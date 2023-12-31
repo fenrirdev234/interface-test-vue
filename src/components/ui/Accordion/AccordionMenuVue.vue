@@ -36,7 +36,7 @@
     <Transition name="accordion-content-a">
       <ul v-if="collapsed.isColapsed && isOpen" class="accordion__content">
         <li v-for="(item, id) in props.items" :key="id" class="accordion__item">
-          <div class="accordion-item__icon"></div>
+          <div class="accordion-item__icon material-icons-round">circle</div>
           {{ item }}
         </li>
       </ul>
@@ -68,7 +68,8 @@ const isOpen: Ref<boolean> = ref(props.active)
   justify-content: space-between;
   color: $gray-1;
   background-color: $white-1;
-  padding: 12px;
+  padding: 0px 10px;
+  height: 42px;
   border-radius: 5px;
   filter: drop-shadow(0px 0px 15px rgba(0, 0, 0, 0.05));
 }
@@ -96,13 +97,16 @@ const isOpen: Ref<boolean> = ref(props.active)
   gap: 10px;
   color: $gray-1;
   font-weight: 500;
+  line-height: 24px;
+  font-size: 15px;
 }
 
 .accordion-item__icon {
-  width: 8px;
-  height: 8px;
-  background-color: $gray-1;
-  border-radius: 50%;
+  color: $gray-1;
+  font-size: 10px;
+
+  font-weight: 400;
+  line-height: 21px;
 }
 .accordion__title {
   font-size: 15px;
@@ -111,8 +115,7 @@ const isOpen: Ref<boolean> = ref(props.active)
   width: 100%;
   display: flex;
 }
-.accordion__title span {
-}
+
 .accordion__title-container {
   width: 100%;
   display: flex;
