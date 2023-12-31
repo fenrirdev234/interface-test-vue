@@ -1,53 +1,20 @@
 <template>
-  <template v-if="props.type === 'age'">
-    <div class="card-event__icon">
-      <div class="card-event-icon__container">
-        <IconCalendar />
-      </div>
-    </div>
-  </template>
-  <template v-if="props.type === 'status'">
-    <div class="card-event__icon">
-      <div class="card-event-icon__container">
-        <IconStatus />
-      </div>
-    </div>
-  </template>
-
-  <template v-if="props.type === 'country'">
-    <div class="card-event__icon">
-      <div class="card-event-icon__container">
-        <IconCountry />
-      </div>
-    </div>
-  </template>
-
-  <template v-if="props.type === 'contact'">
-    <div class="card-event__icon">
-      <div class="card-event-icon__container">
-        <IconContactVue />
-      </div>
-    </div>
-  </template>
-
-  <template v-if="props.type === 'activity'">
-    <div class="card-event__icon">
-      <div class="card-event-icon__container">
-        <IconActivity />
-      </div>
-    </div>
-  </template>
+  <div class="card-event__icon">
+    <span
+      class="card-event-icon--size"
+      :class="{
+        'material-icons-round': props.type !== 'activity',
+        'material-icons-outlined ': props.type === 'activity'
+      }"
+    >
+      {{ StringIcon(props.type) }}
+    </span>
+  </div>
 </template>
 
 <script setup lang="ts">
 import { type IEventType } from '../../../interfaces/IEvents'
-import IconCalendar from '@/components/icons/homeIcons/IconCalendar.vue'
-
-import IconStatus from '@/components/icons/homeIcons/IconStatus.vue'
-import IconCountry from '@/components/icons/homeIcons/IconCountry.vue'
-import IconContactVue from '@/components/icons/homeIcons/IconContact.vue'
-
-import IconActivity from '@/components/icons/homeIcons/IconActivity.vue'
+import { StringIcon } from '../../../lib/StringIcon'
 
 const props = defineProps<IEventType>()
 </script>
@@ -65,5 +32,11 @@ const props = defineProps<IEventType>()
 }
 .card-event-icon__container {
   width: 20px;
+}
+
+.card-event-icon--size {
+  font-weight: 400;
+  line-height: 21px;
+  font-size: 24px;
 }
 </style>

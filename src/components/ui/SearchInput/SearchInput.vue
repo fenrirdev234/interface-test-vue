@@ -1,14 +1,11 @@
 <template>
   <div class="search-container">
     <input type="text" v-model="searchText" placeholder="Search..." class="search-input" />
-    <div class="search-icon">
-      <IconSearchVue />
-    </div>
+    <span class="material-icons-round search-icon--size"> search </span>
   </div>
 </template>
 
 <script setup lang="ts">
-import IconSearchVue from '@/components/icons/homeIcons/IconSearch.vue'
 import { ref, type Ref, watch } from 'vue'
 const searchText: Ref<string> = ref('')
 
@@ -42,11 +39,13 @@ watch(searchText, () => {
     outline: none;
   }
 }
-.search-icon {
-  width: 12xp;
-  height: 12px;
-}
 
+.search-icon--size {
+  font-size: 16px;
+  color: $gray-1;
+  font-weight: 400;
+  line-height: 24px;
+}
 @include mediaMin(1200px) {
   .search-container {
     max-width: 242px;

@@ -10,48 +10,28 @@
           <p>Reg. ID: {{ props.infoData?.regID }}</p>
           <button
             @click="toastCopyMessage('Reg. ID Copied', props.infoData?.regID)"
-            class="info-data__button-id"
+            class="info-data__button-id material-icons-round"
           >
-            <IconContentCopy width="18" height="18" />
+            content_copy
           </button>
         </div>
         <p class="info-status">Status: {{ props.infoData?.status }}</p>
       </div>
     </div>
     <ul class="items-info">
-      <li class="item-info">
-        <IconEditText />
-      </li>
-      <li class="item-info">
-        <IconChat />
-      </li>
-      <li class="item-info">
-        <IconCalendar />
-      </li>
-      <li class="item-info">
-        <IconMessage />
-      </li>
-      <li class="item-info">
-        <IconPhoneVue />
-      </li>
-      <li class="item-info">
-        <IconMore />
-      </li>
+      <li class="item-info material-icons-round">edit_note</li>
+      <li class="item-info material-icons-round">chat</li>
+      <li class="item-info material-icons-round">today</li>
+      <li class="item-info material-icons-round">email</li>
+      <li class="item-info material-icons-round">phone</li>
+      <li class="item-info material-icons-round">more_horiz</li>
     </ul>
   </SectionContainer>
 </template>
 
 <script setup lang="ts">
 import IconContentCopy from '@material-design-icons/svg/filled/content_copy.svg?component'
-import IconCopy from '@/components/icons/homeIcons/IconCopy.vue'
 import SectionContainer from './SectionContainer.vue'
-import IconMore from '@/components/icons/menuIcons/IconMore.vue'
-
-import IconCalendar from '@/components/icons/homeIcons/IconCalendar.vue'
-import IconPhoneVue from '@/components/icons/homeIcons/IconPhone.vue'
-import IconMessage from '@/components/icons/homeIcons/IconMessage.vue'
-import IconChat from '@/components/icons/homeIcons/IconChat.vue'
-import IconEditText from '@/components/icons/homeIcons/IconEditText.vue'
 import { toastCopyMessage } from '@/lib/vueToastification/toastCopyMessage'
 import { type IInfoData } from '../../../../interfaces/IStudentInfo'
 
@@ -73,6 +53,9 @@ const props = defineProps<Iprops>()
 }
 .info-data__button-id {
   @include pseudoActive;
+  font-size: 18px;
+  font-style: normal;
+  line-height: 21px;
 }
 
 .info-data__image-container {
@@ -95,13 +78,15 @@ const props = defineProps<Iprops>()
 
 .info-data__container {
   color: $gray-1;
-  padding-top: 5px;
   font-size: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
 }
 
 .info-data__name {
   color: $violet-1;
-  padding-bottom: 5px;
+
   width: auto;
   display: flex;
   text-wrap: wrap;
@@ -115,31 +100,23 @@ const props = defineProps<Iprops>()
   display: flex;
   justify-content: space-between;
   padding-bottom: 5px;
-  margin-bottom: 5px;
   font-size: 16px;
 }
 
 .items-info {
   display: flex;
   justify-content: space-between;
-  padding-bottom: 10px;
-  padding-left: 12px;
-  padding-right: 12px;
 }
 
 .item-info {
-  width: 20px;
-  height: 20px;
+  padding: 10px;
   justify-content: center;
   display: flex;
   align-items: end;
   color: $gray-1;
   @include pseudoActive;
+  font-weight: 400;
+  line-height: 21px;
+  font-size: 24px;
 }
-/* @include mediaMin(1200px) {
-  .info-data__image-container {
-    width: 66px;
-    height: 66px;
-  }
-} */
 </style>

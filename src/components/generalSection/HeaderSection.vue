@@ -7,13 +7,13 @@
       <div class="info-content">
         <nav class="nav-content">
           <button class="nav-icon">
-            <IconLanguage width="24" height="24" />
+            <span class="material-icons-round nav-icon--size"> language </span>
           </button>
           <button class="nav-icon">
-            <IconDarkMode width="24" height="24" />
+            <span class="material-icons-round nav-icon--size"> dark_mode </span>
           </button>
           <button class="nav-icon notification-icon">
-            <IconNotifications width="24" height="24" />
+            <span class="material-icons-round nav-icon--size"> notifications </span>
             <div class="notification-number" v-if="dataUser && dataUser?.notification.length > 0">
               <span>
                 {{ dataUser?.notification.length }}
@@ -48,11 +48,6 @@
 
 <script setup lang="ts">
 import IconEdmachina from '../icons/headerIcons/IconEdmachina.vue'
-import IconLanguage from '@material-design-icons/svg/filled/language.svg?component'
-
-import IconDarkMode from '@material-design-icons/svg/filled/dark_mode.svg?component'
-
-import IconNotifications from '@material-design-icons/svg/filled/notifications.svg?component'
 
 import { useFetch } from '../../hooks/useFetch'
 import { API_ENDPOINTS } from '@/services/endpoint'
@@ -112,6 +107,7 @@ onMounted(async () => {
   object-fit: contain;
   object-position: right top;
 }
+
 .login-color {
   width: 11px;
   height: 11px;
@@ -160,8 +156,15 @@ onMounted(async () => {
 }
 .nav-icon {
   color: $white-1;
-  display: inline-block;
+  display: flex;
+  align-items: center;
 }
+.nav-icon--size {
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 21px;
+}
+
 .notification-icon {
   position: relative;
 }
@@ -171,7 +174,6 @@ onMounted(async () => {
   width: 18px;
   top: -1px;
   right: -6px;
-
   font-size: 12px;
   font-weight: 700;
   border-radius: 50%;
@@ -180,5 +182,9 @@ onMounted(async () => {
   justify-content: center;
   align-items: center;
   color: $white-1;
+}
+
+.notification-number span {
+  padding-right: 0px;
 }
 </style>

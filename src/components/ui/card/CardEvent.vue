@@ -3,12 +3,14 @@
     <div class="card-event__principal-container">
       <CardEventIconVue :type="props.type" />
       <div>
-        <div class="card-event__type">
-          <p>
+        <p class="card-event__type">
+          <span>
             {{ typeTitle[props.type] }}
-          </p>
-          <div v-if="props.type === 'status'"><IconGear /></div>
-        </div>
+          </span>
+          <span class="icon-gear material-icons-round" v-if="props.type === 'status'"
+            >settings
+          </span>
+        </p>
         <p class="card-event__title">
           {{ props.title }}
         </p>
@@ -28,7 +30,6 @@
 import Divider from '@/components/ui/divider/DividerVue.vue'
 import { type IEventCard } from '../../../interfaces/ICard'
 import CardEventIconVue from './CardEventIcon.vue'
-import IconGear from '@/components/icons/homeIcons/IconGear.vue'
 
 const props = defineProps<IEventCard>()
 const typeTitle = {
@@ -55,10 +56,16 @@ const typeTitle = {
   color: $gray-1;
   text-align: end;
 }
+.icon-gear {
+  font-size: 16px;
+
+  font-weight: 400;
+}
 .card-event__type {
   color: $gray-1;
   justify-content: end;
   align-items: center;
+  text-align: end;
   display: flex;
   font-size: 14px;
   gap: 5px;

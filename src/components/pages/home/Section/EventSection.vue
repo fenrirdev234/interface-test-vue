@@ -28,5 +28,13 @@ const props = defineProps<IProps>()
 
   display: flex;
   gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+@include mediaMin(1120px) {
+  .event-container {
+    flex-wrap: nowrap;
+  }
 }
 </style>

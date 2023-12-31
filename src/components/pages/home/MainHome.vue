@@ -5,9 +5,9 @@
         <a> Record Details </a><span> / </span>
         <a>{{ dataEvents?.regID }}</a>
       </nav>
-      <div class="main-icons">
-        <IconEditVue />
-      </div>
+      <button class="main-icons">
+        <span class="material-icons-round main-icon--size"> app_registration </span>
+      </button>
     </article>
     <TabsAlter>
       <TabAlter title="Overview">
@@ -22,10 +22,7 @@
 
 <script setup lang="ts">
 import TabsAlter from '@/components/ui/Tab/TabsAlter.vue'
-
 import TabAlter from '@/components/ui/Tab/TabAlter.vue'
-
-import IconEditVue from '@/components/icons/homeIcons/IconEdit.vue'
 import OverviewSection from './Section/OverviewSection.vue'
 import EventSection from './Section/EventSection.vue'
 import { onMounted, ref, type Ref } from 'vue'
@@ -50,14 +47,25 @@ onMounted(async () => {
   gap: 4px;
   align-items: center;
 }
+
+.main-icons {
+  height: 21px;
+  margin: 10px;
+}
+
 .first-article {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
-.main-icons {
+
+.main-icon--size {
+  font-size: 24px;
+
+  font-weight: 400;
+  line-height: 21px;
   color: $gray-1;
   @include pseudoActive;
-  margin: 10px;
 }
 
 .main-section {

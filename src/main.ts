@@ -1,6 +1,8 @@
 import './assets/main.css'
 import 'vue-toastification/dist/index.css'
-import 'keen-slider/keen-slider.min.css'
+import 'material-icons/iconfont/outlined.css'
+import 'material-icons/iconfont/round.css'
+import 'material-icons/iconfont/filled.css'
 
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
@@ -35,7 +37,6 @@ const app = createApp(App)
 
 app.use(createPinia())
 app.use(router)
-
 app.use(Toast, options)
 app.use(i18n)
 

@@ -1,23 +1,19 @@
 <template>
   <div class="tab-button__container">
-    <div v-if="props.type && props.type !== 'none'" class="tab-button__icon">
-      <template v-if="props.type === 'email'">
-        <IconMessage />
-      </template>
-      <template v-if="props.type === 'call'">
-        <IconPhone />
-      </template>
-    </div>
-    <p>
+    <template v-if="props.type && props.type !== 'none'">
+      <span class="material-icons-round tab-button__icon--size">
+        {{ StringIcon(props.type) }}
+      </span>
+    </template>
+    <p class="tab-button__title">
       {{ props.title }}
     </p>
   </div>
 </template>
 
 <script setup lang="ts">
+import { StringIcon } from '@/lib/StringIcon'
 import { type ITabBottom } from '../../../interfaces/ITab'
-import IconMessage from '@/components/icons/homeIcons/IconMessage.vue'
-import IconPhone from '@/components/icons/homeIcons/IconPhone.vue'
 
 const props = withDefaults(defineProps<ITabBottom>(), {
   title: '',
@@ -27,13 +23,22 @@ const props = withDefaults(defineProps<ITabBottom>(), {
 
 <style scoped lang="scss">
 .tab-button__container {
-  font-size: 14px;
-  font-weight: 600;
   color: $gray-1;
   display: flex;
-  gap: 12px;
+
+  gap: 10px;
+}
+.tab-button__title {
+  font-size: 16px;
+  line-height: 21px;
 }
 .tab-button__icon {
   width: 20px;
+}
+.tab-button__icon--size {
+  font-size: 24px;
+
+  font-weight: 400;
+  line-height: 21px;
 }
 </style>

@@ -3,8 +3,7 @@
     <button
       class="accordion__button"
       :class="{
-        'accordion__button--active': isOpen && collapsed.isColapsed,
-        'accordion__button--weight': props.weigth
+        'accordion__button--active': isOpen && collapsed.isColapsed
       }"
       @click="isOpen = !isOpen"
     >
@@ -13,16 +12,22 @@
           <SideIcon :icon="props.icon" :active="isOpen && collapsed.isColapsed" />
         </div>
         <transition name="fade">
-          <span v-if="collapsed.isColapsed" class="accordion__title">
+          <span
+            v-if="collapsed.isColapsed"
+            class="accordion__title"
+            :class="{
+              'accordion__button--weight': props.weigth
+            }"
+          >
             <span>{{ props.name }}</span>
             <div
-              class="accordion__arrow"
+              class="accordion__arrow material-icons-round"
               :class="{
                 'accordion__arrow--up': isOpen && collapsed.isColapsed,
                 'accordion__arrow--down': !isOpen
               }"
             >
-              <IconArrowDirection />
+              expand_more
             </div>
           </span>
         </transition>
@@ -41,9 +46,7 @@
 
 <script setup lang="ts">
 import { ref, type Ref } from 'vue'
-import IconArrowDirection from '@/components/icons/homeIcons/IconArrowDirection.vue'
 import SideIcon from '@/components/ui/sideBar/SideIcon.vue'
-
 import { type ISideAccordion } from '../../../interfaces/ISideMenu'
 import { useCollapsedStore } from '../../../stores/isCollapsed'
 const collapsed = useCollapsedStore()
@@ -66,7 +69,7 @@ const isOpen: Ref<boolean> = ref(props.active)
   color: $gray-1;
   background-color: $white-1;
   padding: 12px;
-  border-radius: 4px;
+  border-radius: 5px;
   filter: drop-shadow(0px 0px 15px rgba(0, 0, 0, 0.05));
 }
 .accordion__button--active {
@@ -74,22 +77,25 @@ const isOpen: Ref<boolean> = ref(props.active)
   color: $white-1;
 }
 .accordion__button--weight {
-  font-weight: 600;
+  font-weight: 700;
 }
 .accordion__content {
-  padding-top: 6px;
-  padding-bottom: 4px;
-
+  padding-top: 10px;
   width: 100%;
+  gap: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 .accordion__item {
   padding-left: 30px;
-  padding-top: 18px;
-  padding-bottom: 18px;
+
+  height: 42px;
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
   color: $gray-1;
+  font-weight: 500;
 }
 
 .accordion-item__icon {
@@ -99,28 +105,26 @@ const isOpen: Ref<boolean> = ref(props.active)
   border-radius: 50%;
 }
 .accordion__title {
-  font-size: 14px;
+  font-size: 15px;
   white-space: nowrap;
   justify-content: space-between;
   width: 100%;
   display: flex;
 }
 .accordion__title span {
-  padding-right: 12px;
 }
 .accordion__title-container {
   width: 100%;
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
 }
 
 .accordion__arrow {
-  width: 12px;
-  height: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  font-size: 24px;
+
+  font-weight: 400;
+  line-height: 21px;
 }
 .accordion__arrow--up {
   transition: all 0.6s ease;

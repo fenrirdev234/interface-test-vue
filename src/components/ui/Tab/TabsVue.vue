@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="tabs-container">
     <ul class="tabs-flex">
       <li
         class="tab-button"
@@ -42,15 +42,15 @@ provide('activeTabHash', activeTabHash)
   display: flex;
   gap: 1px;
 }
-
+.tabs-container {
+  padding-top: 10px;
+}
 .tab-button {
   background-color: $white-1;
   cursor: pointer;
-  padding: 14px;
+  padding: 10px 15px;
   border-top-right-radius: 6px;
   border-top-left-radius: 6px;
-  font-size: 14px;
-  font-weight: 600;
   color: $gray-1;
   opacity: 0.4;
 }

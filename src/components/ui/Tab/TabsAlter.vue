@@ -40,14 +40,13 @@ provide('activeTabHash', activeTabHash)
   display: flex;
   gap: 1px;
   justify-content: center;
+  border-bottom: 1px solid $gray-6;
 }
 
 .tab-button {
   cursor: pointer;
-  padding: 14px;
-
+  padding: 12px 15px;
   font-size: 14px;
-  font-weight: 600;
   color: $gray-1;
   opacity: 0.4;
 }
@@ -59,24 +58,17 @@ provide('activeTabHash', activeTabHash)
     content: '';
     position: absolute;
     width: 100%;
-    height: 2px;
+    height: 3px;
     background-color: $violet-2;
-    bottom: 0;
-    left: 0;
-  }
-  &::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 2px;
-    background-color: $violet-2;
-    z-index: 2;
-    bottom: -3px;
+    bottom: -1px;
     left: 0;
   }
 }
 
-tab-button__active .tab-butto_desactive {
-  opacity: 0.4;
+@include mediaMin(520px) {
+  .tab-button {
+    padding: 15px 20px;
+    font-size: 18px;
+  }
 }
 </style>

@@ -2,8 +2,11 @@
   <div class="dropdown">
     <button ref="ignoreTarget" class="dropdown__button" @click="onClickOpen">
       <p class="dropdown__title" v-if="title">{{ title }}</p>
-      <div :class="{ 'dropdown__arrow--up': isOpen, 'dropdown__arrow--down': !isOpen }">
-        <IconArrowSolid />
+      <div
+        :class="{ 'dropdown__arrow--up': isOpen, 'dropdown__arrow--down': !isOpen }"
+        class="material-icons-round icon--arrow"
+      >
+        arrow_drop_down
       </div>
     </button>
     <Transition name="dropdown-content-a">
@@ -25,7 +28,6 @@
 <script setup lang="ts">
 import { ref, type Ref } from 'vue'
 import { onClickOutside } from '@vueuse/core'
-import IconArrowSolid from '@/components/icons/homeIcons/IconArrowSolid.vue'
 import type { IDropdownFilterProps } from '@/interfaces/IDropdown'
 
 const props = defineProps<IDropdownFilterProps>()
@@ -108,9 +110,13 @@ onClickOutside(
   font-size: 12px;
   white-space: nowrap;
 }
-.dropdown__arrow {
-  width: 10px;
+
+.icon--arrow {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
 }
+
 .dropdown__arrow--up {
   transition: all 0.4s ease;
   transform: rotateZ(180deg);

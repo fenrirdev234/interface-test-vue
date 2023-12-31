@@ -7,9 +7,7 @@
     </transition>
 
     <transition name="fade">
-      <div v-if="collapsed.isColapsed" class="side-item__text">
-        <span> REPORTS </span>
-      </div>
+      <div v-if="collapsed.isColapsed" class="side-item__text">REPORTS</div>
     </transition>
   </li>
 </template>
@@ -33,12 +31,13 @@ const collapsed = useCollapsedStore()
 }
 .side-item__text {
   color: $gray-9;
-  font-size: 9px;
+  font-size: 12px;
   white-space: nowrap;
-  font-weight: 600;
   height: 22px;
   display: flex;
   align-items: end;
+  font-weight: 700;
+  line-height: 18px;
 }
 .side-icon {
   width: 22px;

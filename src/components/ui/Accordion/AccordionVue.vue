@@ -2,13 +2,14 @@
   <div>
     <button class="accordion__button" @click="isOpen = !isOpen">
       <div class="accordion__title-container">
-        <div>
-          <IconPointVue />
-        </div>
+        <span class="material-icons-round accordion__icon--size"> drag_indicator </span>
         <span class="accordion__title">{{ props.title }}</span>
       </div>
-      <div :class="{ 'accordion__arrow--up': isOpen, 'accordion__arrow--down': !isOpen }">
-        <IconArrowDirection />
+      <div
+        :class="{ 'accordion__arrow--up': isOpen, 'accordion__arrow--down': !isOpen }"
+        class="material-icons-round arrow-icon--size"
+      >
+        expand_more
       </div>
     </button>
     <Transition name="accordion-content-a">
@@ -23,8 +24,6 @@
 
 <script setup lang="ts">
 import { ref, type Ref } from 'vue'
-import IconArrowDirection from '@/components/icons/homeIcons/IconArrowDirection.vue'
-import IconPointVue from '@/components/icons/homeIcons/IconPoint.vue'
 
 const props = defineProps({
   title: {
@@ -54,24 +53,31 @@ const isOpen: Ref<boolean> = ref(true)
   width: 100%;
   display: flex;
 }
+.accordion__icon--size {
+  font-size: 16px;
+  font-weight: 400;
+}
 .accordion__title {
-  padding-left: 5px;
   font-size: 14px;
   font-weight: 700;
 }
+
 .accordion__title-container {
   display: flex;
   align-items: center;
 }
-
+.arrow-icon--size {
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: -0.3px;
+}
 .accordion__arrow--up {
   transition: all 0.4s ease;
-  transform: rotateZ(0deg);
+  transform: rotateZ(180deg);
 }
 .accordion__arrow--down {
   transition: all 0.4s ease;
-
-  transform: rotateZ(180deg);
+  transform: rotateZ(0deg);
 }
 .accordion__item--selected {
   background-color: $gray-6;

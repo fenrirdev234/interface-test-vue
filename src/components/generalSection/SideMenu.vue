@@ -4,7 +4,7 @@
       <button class="menu-position" ref="target">
         <ul class="menu-list">
           <SideBottonVue
-            :weigth="true"
+            :weigth="false"
             name="Dashboard"
             icon="dashboard"
             :active="route.path === '/'"

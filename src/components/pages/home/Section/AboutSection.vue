@@ -9,10 +9,10 @@
             <div class="about-item__email">
               <p>Email:</p>
               <button
-                class="about-item__icon"
+                class="material-icons-round about-item__icon--size"
                 @click="toastCopyMessage('email Copied', props.aboutData?.email)"
               >
-                <IconPenVue />
+                edit
               </button>
             </div>
             <p>{{ props.aboutData?.email }}</p>
@@ -33,7 +33,6 @@
 import SectionContainer from './SectionContainer.vue'
 import AccordionVue from '@/components/ui/Accordion/AccordionVue.vue'
 import Divider from '@/components/ui/divider/DividerVue.vue'
-import IconPenVue from '@/components/icons/homeIcons/IconPen.vue'
 import ItemSection from './ItemSection.vue'
 import { toastCopyMessage } from '@/lib/vueToastification/toastCopyMessage'
 import type { IAboutData } from '@/interfaces/IStudentInfo'
@@ -76,9 +75,10 @@ const props = defineProps<IProps>()
   justify-content: space-between;
   align-items: center;
 }
-.about-item__icon {
-  width: 9px;
-  height: 9px;
+.about-item__icon--size {
   @include pseudoActive;
+  font-size: 12px;
+
+  font-weight: 400;
 }
 </style>

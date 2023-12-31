@@ -30,13 +30,9 @@ watch(activeTabHash, () => {
 </script>
 
 <template>
-  <div class="tab-container" v-show="isActive">
+  <div v-show="isActive">
     <slot />
   </div>
 </template>
 
-<style scoped lang="scss">
-.tab-container {
-  border-top: 2px solid $gray-6;
-}
-</style>
+<style scoped lang="scss"></style>

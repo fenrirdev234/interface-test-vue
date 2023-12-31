@@ -22,5 +22,6 @@ const props = defineProps({
 .about-item {
   font-size: 12px;
   color: $gray-1;
+  line-height: 17px;
 }
 </style>

@@ -2,9 +2,12 @@
   <div class="dropdown">
     <button ref="ignoreTarget" class="dropdown__button" @click="onClickOpen">
       <span class="dropdown__title">{{ title }} </span>
-      <div :class="{ 'dropdown__arrow--up': isOpen, 'dropdown__arrow--down': !isOpen }">
-        <IconArrowSolid />
-      </div>
+      <span
+        class="arrow-icon material-icons-round"
+        :class="{ 'dropdown__arrow--up': isOpen, 'dropdown__arrow--down': !isOpen }"
+      >
+        arrow_drop_down
+      </span>
     </button>
     <Transition name="dropdown-content-a">
       <div v-if="isOpen" ref="target" class="dropdown__content">
@@ -25,7 +28,6 @@
 <script setup lang="ts">
 import { ref, type Ref } from 'vue'
 import { onClickOutside } from '@vueuse/core'
-import IconArrowSolid from '@/components/icons/homeIcons/IconArrowSolid.vue'
 import { type IDropdownProps } from '../../../interfaces/IDropdown'
 
 const props = withDefaults(defineProps<IDropdownProps>(), {
@@ -78,20 +80,19 @@ onClickOutside(
   color: $gray-1;
   border-color: $gray-6;
   padding: 7px 15px;
-  font-size: 12px;
-  font-weight: 700;
+  align-items: center;
 }
 .dropdown__content {
   padding: 6px 0px;
 
-  border: 2px solid;
+  border: 1px solid;
   border-radius: 5px;
   color: $gray-1;
   border-color: $gray-6;
   position: absolute;
   width: 100%;
   background-color: $white-1;
-  top: 40px;
+  top: 45px;
 }
 .dropdown__item {
   padding: 4px 0px;
@@ -103,7 +104,15 @@ onClickOutside(
     background-color: $gray-6;
   }
 }
-
+.dropdown__title {
+  font-size: 12px;
+  font-weight: 700;
+}
+.arrow-icon {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+}
 .dropdown__arrow--up {
   transition: all 0.4s ease;
   transform: rotateZ(180deg);

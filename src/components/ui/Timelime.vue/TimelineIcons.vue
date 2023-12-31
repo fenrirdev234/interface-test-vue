@@ -1,43 +1,15 @@
 <template>
-  <template v-if="props.type === 'call'">
-    <div class="timeline-item-icon">
-      <div class="timeline-item-icon__container">
-        <IconPhoneVue />
-      </div>
-    </div>
-  </template>
-  <template v-if="props.type === 'email'">
-    <div class="timeline-item-icon">
-      <div class="timeline-item-icon__container">
-        <IconMessage />
-      </div>
-    </div>
-  </template>
-  <template v-if="props.type === 'academy'">
-    <div class="timeline-item-icon">
-      <div class="timeline-item-icon__container">
-        <IconEduc />
-      </div>
-    </div>
-  </template>
-  <template v-if="props.type === 'chat'">
-    <div class="timeline-item-icon">
-      <div class="timeline-item-icon__container">
-        <IconChat />
-      </div>
-    </div>
-  </template>
-  <template v-if="props.type === 'tag'">
-    <div class="item__tag" />
-  </template>
+  <div v-if="props.type === 'tag'" class="item__tag" />
+  <div v-else class="timeline-item-icon">
+    <span class="material-icons-round timeline-item-icon--size">
+      {{ StringIcon(props.type) }}
+    </span>
+  </div>
 </template>
 
 <script setup lang="ts">
-import IconPhoneVue from '@/components/icons/homeIcons/IconPhone.vue'
 import { type ITimelineIcon } from '../../../interfaces/ITimeline'
-import IconMessage from '@/components/icons/homeIcons/IconMessage.vue'
-import IconEduc from '@/components/icons/menuIcons/IconEduc.vue'
-import IconChat from '@/components/icons/homeIcons/IconChat.vue'
+import { StringIcon } from '../../../lib/StringIcon'
 
 const props = defineProps<ITimelineIcon>()
 </script>
@@ -47,8 +19,8 @@ const props = defineProps<ITimelineIcon>()
   border: 2px solid;
   border-color: $gray-5;
   border-radius: 50%;
-  width: 24px;
-  height: 24px;
+  width: 25px;
+  height: 25px;
   background-color: $violet-2;
   z-index: 1;
   color: $white-1;
@@ -56,17 +28,20 @@ const props = defineProps<ITimelineIcon>()
   justify-content: center;
   align-items: center;
 }
-.timeline-item-icon__container {
-  width: 10px;
-}
+
 .item__tag {
-  border: 2px solid;
+  border: 1px solid;
   border-color: $gray-5;
   border-radius: 50%;
-  width: 11px;
-  height: 11px;
+  width: 8px;
+  height: 8px;
   background-color: $violet-2;
   z-index: 1;
   color: $white-1;
+}
+
+.timeline-item-icon--size {
+  font-size: 12px;
+  font-weight: 400;
 }
 </style>

@@ -35,20 +35,21 @@ const collapsed = useCollapsedStore()
   width: 100%;
   background-color: $white-1;
   display: flex;
-  gap: 12px;
+  gap: 9px;
 
   align-items: center;
-  border-radius: 4px;
+  border-radius: 5px;
   filter: drop-shadow(0px 0px 15px rgba(0, 0, 0, 0.05));
 }
 .side-item__text {
   color: $gray-1;
-  font-size: 14px;
+  font-size: 15px;
   white-space: nowrap;
+  line-height: 24px;
 }
 
 .side-item__text--weight {
-  font-weight: 600;
+  font-weight: 700;
 }
 .side-item__text--active {
   color: $white-1;
