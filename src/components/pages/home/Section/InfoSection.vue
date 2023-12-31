@@ -30,7 +30,6 @@
 </template>
 
 <script setup lang="ts">
-import IconContentCopy from '@material-design-icons/svg/filled/content_copy.svg?component'
 import SectionContainer from './SectionContainer.vue'
 import { toastCopyMessage } from '@/lib/vueToastification/toastCopyMessage'
 import { type IInfoData } from '../../../../interfaces/IStudentInfo'
