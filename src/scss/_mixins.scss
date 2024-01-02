@@ -18,3 +18,22 @@
 @mixin shadowMix {
   box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.05);
 }
+@mixin scrollbarStyle {
+  &::-webkit-scrollbar {
+    width: 10px;
+    border-radius: 40px;
+    /* width of the entire scrollbar */
+  }
+  &::-webkit-scrollbar-track {
+    background: $gray-6;
+    border-radius: 40px;
+
+    /* color of the tracking area */
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: $gray-1; /* color of the scroll thumb */
+    border-radius: 40px; /* roundness of the scroll thumb */
+    border: 2px solid $gray-6;
+    /* creates padding around scroll thumb */
+  }
+}

@@ -62,9 +62,6 @@ const filterUser = (value: string) => {
 }
 const filterSearch = (value: string) => {
   if (value.length > 0) {
-    /* const userData = InitdataValue.value?.filter(
-      (item) => item.autor.toLocaleLowerCase() === value.toLocaleLowerCase()
-    ) */
     const userData = InitdataValue.value?.filter((item) => {
       return item.autor.toLocaleLowerCase().includes(value.toLocaleLowerCase())
     })

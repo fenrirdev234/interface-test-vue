@@ -49,10 +49,7 @@
               </div>
               <div class="item-risk" :class="{ item__space: index > 0 }">
                 <p>{{ item.riskLevel }}</p>
-                <p>
-                  (Nota: {{ item.score }}
-                  )
-                </p>
+                <p>(Nota: {{ item.score }})</p>
               </div>
             </template>
           </div>

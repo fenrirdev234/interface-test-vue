@@ -50,9 +50,9 @@
             :items="['My Reports', 'My Reports', 'My Reports']"
           />
 
-          <SideBottonVue name="My report" icon="my-report" :active="false" :weigth="true" />
+          <SideBottonVue name="My Reports" icon="my-report" :active="false" :weigth="true" />
           <SideBottonVue
-            name="custom Report"
+            name="Custom Reports"
             icon="custom-report"
             :weigth="false"
             :active="false"

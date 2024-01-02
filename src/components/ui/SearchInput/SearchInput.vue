@@ -32,9 +32,10 @@ watch(searchText, () => {
   width: 100%;
   font-size: 12px;
   color: $gray-1;
+  font-weight: 700;
   overflow: hidden;
   white-space: nowrap;
-  text-overflow: ellipsis;
+
   &:focus {
     outline: none;
   }
@@ -48,7 +49,7 @@ watch(searchText, () => {
 }
 @include mediaMin(1200px) {
   .search-container {
-    max-width: 242px;
+    max-width: 243px;
   }
 }
 </style>

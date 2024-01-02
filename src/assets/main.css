@@ -130,8 +130,10 @@ body {
   font-size: 100%;
   font-family: var(--tipo-principal);
   font-weight: 700;
+  /* opcional */
+  font-smooth: always;
+  /* opcional */
+  -webkit-font-smoothing: antialiased;
+  /* opcional */
+  -moz-osx-font-smoothing: grayscale;
 }
-
-/* scrollStyle
-
-scrollStyle::webkit-scrollbar */
