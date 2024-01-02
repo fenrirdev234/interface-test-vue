@@ -94,7 +94,7 @@
     {
       "autor": "",
       "type": "call",
-      "title": "Chat",
+      "title": "Call",
       "message": "Direct Call made to +52 55 22126164 \nCall Duration: 1 mins. 22 sec.",
       "link": "",
       "from": "Gerardo Moyano",
@@ -107,7 +107,7 @@
     {
       "autor": "",
       "type": "call",
-      "title": "Chat",
+      "title": "Call",
       "message": "Direct Call made to +52 55 22126164 \nCall Duration: 2 mins. 30 sec.",
       "link": "",
       "from": "Gerardo Moyano",
@@ -127,6 +127,19 @@
       "time": {
         "date": "Jun 11, 2023 - 1:45pm",
         "month": "June",
+        "year": "2023"
+      }
+    },
+    {
+      "autor": "Gerardo Moyano",
+      "type": "email",
+      "title": "Initial Contact",
+      "message": "Welcome email sent.",
+      "link": "View Email",
+      "from": "",
+      "time": {
+        "date": "April 11, 2023 - 1:45pm",
+        "month": "April",
         "year": "2023"
       }
     }

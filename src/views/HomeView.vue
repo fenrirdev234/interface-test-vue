@@ -49,7 +49,7 @@ import GeneralLayout from '@/layout/GeneralLayout.vue'
   height: 100%;
 }
 
-@include mediaMin(720px) {
+@include mediaMin(840px) {
   .grid-home {
     grid-template-columns:
       minmax(auto, 280px)

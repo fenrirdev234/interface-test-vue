@@ -41,13 +41,13 @@
         </ul>
         <div>
           <h4 class="risk-title">Detalle Riesgo de Ingreso:</h4>
-          <DividerVue />
+
           <div class="risk-grid">
             <template v-for="(item, index) in props.studentData?.risk" :key="index">
-              <div class="item-subject" :class="{ item__space: index > 0 }">
+              <div class="item-subject">
                 <p class="item-subject__title">{{ item.subject }}:</p>
               </div>
-              <div class="item-risk" :class="{ item__space: index > 0 }">
+              <div class="item-risk">
                 <p>{{ item.riskLevel }}</p>
                 <p>(Nota: {{ item.score }})</p>
               </div>
@@ -62,7 +62,6 @@
 <script setup lang="ts">
 import AccordionVue from '@/components/ui/Accordion/AccordionVue.vue'
 import SectionContainer from './SectionContainer.vue'
-import DividerVue from '@/components/ui/divider/DividerVue.vue'
 
 import { type IStudentData } from '../../../../interfaces/IStudentInfo'
 
@@ -72,7 +71,7 @@ interface Iprops {
 const props = defineProps<Iprops>()
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .student-container {
   width: 100%;
 }
@@ -95,6 +94,8 @@ const props = defineProps<Iprops>()
 .risk-title {
   font-size: 14px;
   padding-bottom: 10px;
+  border-bottom: 1px solid;
+  border-color: $gray-5;
 }
 
 .risk-grid {
@@ -104,6 +105,7 @@ const props = defineProps<Iprops>()
   grid-template-areas: 'subject risk';
   padding-top: 10px;
   column-gap: 5px;
+  row-gap: 10px;
 }
 
 .item-subject {
@@ -113,9 +115,7 @@ const props = defineProps<Iprops>()
 
   font-size: 12px;
 }
-.item__space {
-  padding-top: 10px;
-}
+
 .item-subject__title {
   display: flex;
 }

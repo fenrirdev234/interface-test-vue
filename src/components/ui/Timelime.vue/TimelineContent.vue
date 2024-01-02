@@ -78,6 +78,7 @@ const props = defineProps({
 
   font-size: 12px;
   color: $violet-2;
+  margin: 2.5px 0px;
 }
 .timeline-item-icon__line {
   width: 2px;

@@ -88,8 +88,9 @@ const props = defineProps<Iprops>()
 
   width: auto;
   display: flex;
-  text-wrap: wrap;
+
   font-size: 18px;
+  text-overflow: ellipsis;
 }
 .info-status {
   display: inline-block;
@@ -108,14 +109,21 @@ const props = defineProps<Iprops>()
 }
 
 .item-info {
-  padding: 10px;
+  padding: 6px;
   justify-content: center;
   display: flex;
   align-items: end;
   color: $gray-1;
   @include pseudoActive;
   font-weight: 400;
-  line-height: 21px;
-  font-size: 24px;
+  line-height: 17px;
+  font-size: 21px;
+}
+@include mediaMin(960px) {
+  .item-info {
+    padding: 10px;
+    line-height: 21px;
+    font-size: 24px;
+  }
 }
 </style>

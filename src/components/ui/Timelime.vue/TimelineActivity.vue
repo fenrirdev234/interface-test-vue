@@ -106,10 +106,18 @@ onMounted(async () => {
 
 .timeline__content {
   width: 100%;
+  min-height: 935px;
+  position: relative;
+
+  overflow-y: scroll;
+  @include scrollbarStyle;
 }
 .timeline__item {
   display: flex;
+  position: absolute;
   flex-direction: column;
+  padding-right: 5px;
+  width: 100%;
 }
 
 @include mediaMin(420px) {

@@ -19,7 +19,7 @@
     <Divider />
     <div class="card-event__detail">
       <p>{{ props.detail }}</p>
-      <p>
+      <p class="card-event__detail--secundary">
         {{ props.moreDetail }}
       </p>
     </div>
@@ -78,6 +78,10 @@ const typeTitle = {
   justify-content: space-between;
   padding-top: 10px;
 }
+.card-event__detail--secundary {
+  text-align: end;
+}
+
 .card-event__principal-container {
   display: flex;
   justify-content: space-between;

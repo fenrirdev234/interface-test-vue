@@ -32,7 +32,7 @@ const props = defineProps<IProps>()
   justify-content: center;
 }
 
-@include mediaMin(1120px) {
+@include mediaMin(1420px) {
   .event-container {
     flex-wrap: nowrap;
   }
