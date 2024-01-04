@@ -2,6 +2,6 @@
   "name": "Hellen Smith",
   "rol": "Admin",
   "state": "available",
-  "image": "./images/hellenI.webp",
+  "image": "./images/hellenI_2.webp",
   "notification": ["notication 1", "notication 2", "notication 3", "notication 4"]
 }
