@@ -2,8 +2,8 @@
   <section class="main-section">
     <article class="first-article">
       <nav class="main-nav">
-        <a> Record Details </a><span> / </span>
-        <a>{{ dataEvents?.regID }}</a>
+        <a href="#"> Record Details </a><span> / </span>
+        <a href="#">{{ dataEvents?.regID }}</a>
       </nav>
       <button class="main-icons">
         <span class="material-icons-round main-icon--size"> app_registration </span>

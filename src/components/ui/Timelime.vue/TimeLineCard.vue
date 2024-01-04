@@ -14,7 +14,7 @@
       <span>
         {{ props.message }}
       </span>
-      <a v-if="props.link && props.link.length > 0"> View Email</a>
+      <a v-if="props.link && props.link.length > 0" href="#"> View Email</a>
     </div>
   </div>
 </template>
