@@ -28,7 +28,13 @@
 
             <div class="image-container">
               <div class="image-content">
-                <img class="info-image" :src="dataUser?.image" :alt="dataUser?.name" />
+                <img
+                  class="info-image"
+                  width="38"
+                  height="38"
+                  :src="dataUser?.image"
+                  :alt="dataUser?.name"
+                />
               </div>
               <div
                 class="login-color"
