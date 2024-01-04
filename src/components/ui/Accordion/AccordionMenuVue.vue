@@ -1,5 +1,5 @@
 <template>
-  <div class="accordion">
+  <li class="accordion">
     <button
       class="accordion__button"
       :class="{
@@ -41,7 +41,7 @@
         </li>
       </ul>
     </Transition>
-  </div>
+  </li>
 </template>
 
 <script setup lang="ts">
