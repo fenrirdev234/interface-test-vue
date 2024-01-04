@@ -12,7 +12,7 @@
 /* Aquí definimos las Custom properties */
 :root {
   /* Tipografía */
-  --tipo-principal: Montserrat;
+  --tipo-principal: Montserrat, sans-serif;
   --tipo-secundaria: Verdana;
 }
 
@@ -128,7 +128,7 @@ svg {
 body {
   min-height: 100vh;
   font-size: 100%;
-  font-family: var(--tipo-principal);
+  font-family: 'Montserrat', sans-serif;
   font-weight: 700;
   /* opcional */
   font-smooth: always;
