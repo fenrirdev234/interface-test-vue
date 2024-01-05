@@ -46,6 +46,8 @@ watch(searchText, () => {
   color: $gray-1;
   font-weight: 400;
   line-height: 24px;
+  width: 16px;
+  height: 24px;
 }
 @include mediaMin(1200px) {
   .search-container {

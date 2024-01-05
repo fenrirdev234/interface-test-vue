@@ -19,6 +19,8 @@ const props = defineProps<ISideIcon>()
   font-size: 24px;
   font-weight: 400;
   line-height: 21px;
+  width: 24px;
+  height: 21px;
 }
 .side-icon__active {
   color: $white-1;

@@ -19,7 +19,7 @@ export const StringIcon = (
     | 'email'
     | 'academy'
     | 'chat'
-) =>
+): string =>
   icon === 'dashboard'
     ? 'home'
     : icon === 'smart-enroller'
@@ -56,4 +56,4 @@ export const StringIcon = (
     ? 'school'
     : icon === 'chat'
     ? 'chat'
-    : ''
+    : ' '
