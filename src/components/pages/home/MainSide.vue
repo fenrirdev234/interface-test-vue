@@ -1,6 +1,7 @@
 <template>
   <div class="side-scrollbar">
-    <div class="side-container" v-if="dataInfo">
+    <MainSideSkeleton v-if="loading && !dataInfo" />
+    <div class="side-container" v-else-if="dataInfo">
       <InfoSection :infoData="dataInfo.infoData" />
       <StudentSection :studentData="dataInfo.studentData" />
       <AboutSectionVue :aboutData="dataInfo.aboutData" />
@@ -26,12 +27,15 @@ import { useFetch } from '../../../hooks/useFetch'
 import { API_ENDPOINTS } from '../../../services/endpoint'
 import { type IStudentInfo } from '../../../interfaces/IStudentInfo'
 import { ref, onMounted, type Ref } from 'vue'
+import MainSideSkeleton from './SkeletonSection/MainSideSkeleton.vue'
 
 const dataInfo: Ref<IStudentInfo | undefined | null> = ref(null)
 
+const loading: Ref<boolean> = ref(true)
 onMounted(async () => {
-  const { data } = await useFetch<IStudentInfo>(API_ENDPOINTS.STUDENT)
+  const { data, isLoading } = await useFetch<IStudentInfo>(API_ENDPOINTS.STUDENT)
   dataInfo.value = data.value
+  loading.value = isLoading.value
 })
 </script>
 
