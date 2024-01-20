@@ -1,8 +1,8 @@
 import './assets/main.css'
 import 'vue-toastification/dist/index.css'
-import 'material-icons/iconfont/outlined.css'
-import 'material-icons/iconfont/round.css'
-import 'material-icons/iconfont/filled.css'
+import '@fontsource-variable/montserrat'
+import '@fontsource/material-icons-round'
+import '@fontsource/material-icons'
 
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'

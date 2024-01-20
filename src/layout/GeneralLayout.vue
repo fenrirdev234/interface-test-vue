@@ -1,7 +1,8 @@
 <template>
   <div class="container">
-    <div class="grid-placeholder"></div>
-    <header class="header-container"><HeaderSection /></header>
+    <header class="header-container">
+      <HeaderSection />
+    </header>
     <aside class="menu-container"><SideMenu /></aside>
     <main class="main-container"><slot></slot></main>
     <footer class="footer-container">
@@ -47,12 +48,6 @@ import SideMenu from '@/components/generalSection/SideMenu.vue'
 .footer-container {
   grid-area: footer;
 }
-.grid-placeholder {
-  display: none;
-  width: 100%;
-  background-color: $violet-1;
-  grid-area: placeholder;
-}
 
 @include mediaMin(350px) {
   .menu-container {
@@ -74,15 +69,12 @@ import SideMenu from '@/components/generalSection/SideMenu.vue'
   }
 }
 
-@include mediaMin(1600px) {
+@include mediaMin(1601px) {
   .container {
     grid-template-areas:
-      'placeholder header'
+      'header header'
       'menu main'
       'menu footer';
-  }
-  .grid-placeholder {
-    display: block;
   }
 }
 </style>

@@ -4,7 +4,7 @@
       class="card-event-icon--size"
       :class="{
         'material-icons-round': props.type !== 'activity',
-        'material-icons-outlined ': props.type === 'activity'
+        'material-icons': props.type === 'activity'
       }"
     >
       {{ StringIcon(props.type) }}
@@ -36,7 +36,6 @@ const props = defineProps<IEventType>()
 
 .card-event-icon--size {
   font-weight: 400;
-  line-height: 21px;
-  font-size: 24px;
+  font-size: 25px;
 }
 </style>
