@@ -1,0 +1,55 @@
+import { Meta, Typeset } from '@storybook/addon-docs'
+
+<Meta title="Foundation/Fonts" />
+
+export const typography ={
+   type: {
+    primary: "'Montserrat Variable', sans-serif"
+  },
+  weight: {
+    medium: '500',
+    bold: '700',
+
+},
+size: {
+s1:9,
+s2: 12,
+s3: 14,
+s4: 15,
+s5: 16,
+s6: 18,
+m1: 21,
+m2: 24,
+},
+
+}
+
+export const SampleText = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+
+# Typography
+
+**Font:** Montserrat Variable
+
+**Weights:** 500(medium), 700(bold)
+
+<Typeset
+  fontSizes={[Number(typography.size.s4)]}
+  fontWeight={typography.weight.medium}
+  sampleText={SampleText}
+  fontFamily={typography.type.primary}
+/>
+<Typeset
+  fontSizes={[
+    Number(typography.size.s1),
+    Number(typography.size.s2),
+    Number(typography.size.s3),
+    Number(typography.size.s5),
+    Number(typography.size.s6),
+    Number(typography.size.m1),
+    Number(typography.size.m2)
+
+]}
+fontWeight={typography.weight.bold}
+sampleText={SampleText}
+fontFamily={typography.type.primary}
+/>
