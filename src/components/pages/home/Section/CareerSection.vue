@@ -15,10 +15,10 @@
               @change-selected="(select) => changeCareer(props.carrerData?.career, select)"
             />
           </li>
-          <ItemSection2 title="Career ID" :content="career?.id" />
-          <ItemSection2 title="Type" :content="career?.type" />
-          <ItemSection2 title="Modality" :content="career?.modality" />
-          <ItemSection2 title="Status" :content="career?.status" />
+          <ItemSection4 title="Career ID" :content="career?.id" />
+          <ItemSection4 title="Type" :content="career?.type" />
+          <ItemSection4 title="Modality" :content="career?.modality" />
+          <ItemSection3 title="Status" :content="career?.status" />
           <ItemSection2 title="Student ID" :content="career?.studentId" />
           <ItemSection2 title="Cohort" :content="career?.cohort" />
         </ul>
@@ -34,6 +34,8 @@ import SectionContainer from './SectionContainer.vue'
 import AccordionVue from '@/components/ui/Accordion/AccordionVue.vue'
 import { ref, type Ref } from 'vue'
 import type { ICarrerData } from '@/interfaces/IStudentInfo'
+import ItemSection3 from './ItemSection3.vue'
+import ItemSection4 from './ItemSection4.vue'
 interface ICareer {
   name: string
   id: string

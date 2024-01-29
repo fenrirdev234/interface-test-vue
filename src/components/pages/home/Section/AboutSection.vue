@@ -3,8 +3,8 @@
     <AccordionVue title="About">
       <div class="about-container">
         <ul class="about-items about-items--primary">
-          <ItemSection title="First Name" :content="props.aboutData?.firstName" />
-          <ItemSection title="Last Name" :content="props.aboutData?.lastName" />
+          <ItemSection3 title="First Name" :content="props.aboutData?.firstName" />
+          <ItemSection3 title="Last Name" :content="props.aboutData?.lastName" />
           <li class="about-item">
             <div class="about-item__email">
               <p>Email:</p>
@@ -20,8 +20,8 @@
         </ul>
         <Divider />
         <ul class="about-items about-items--secundary">
-          <ItemSection title="Phone Number" :content="props.aboutData?.phone" />
-          <ItemSection title="Country" :content="props.aboutData?.country" />
+          <ItemSection3 title="Phone Number" :content="props.aboutData?.phone" />
+          <ItemSection3 title="Country" :content="props.aboutData?.country" />
           <ItemSection title="Category" :content="props.aboutData?.category" />
         </ul>
       </div>
@@ -36,6 +36,7 @@ import Divider from '@/components/ui/divider/DividerVue.vue'
 import ItemSection from './ItemSection.vue'
 import { toastCopyMessage } from '@/lib/vueToastification/toastCopyMessage'
 import type { IAboutData } from '@/interfaces/IStudentInfo'
+import ItemSection3 from './ItemSection3.vue'
 
 interface IProps {
   aboutData?: IAboutData
@@ -74,6 +75,9 @@ const props = defineProps<IProps>()
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+.about-item__email p {
+  line-height: normal;
 }
 .about-item__icon--size {
   @include pseudoActive;

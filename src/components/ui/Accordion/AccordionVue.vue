@@ -61,6 +61,7 @@ const isOpen: Ref<boolean> = ref(true)
 .accordion__title {
   font-size: 14px;
   font-weight: 700;
+  line-height: normal;
 }
 
 .accordion__title-container {
