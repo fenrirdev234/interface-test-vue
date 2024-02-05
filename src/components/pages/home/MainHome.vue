@@ -2,8 +2,10 @@
   <section class="main-section">
     <article class="first-article">
       <nav class="main-nav">
-        <a href="#"> Record Details </a><span> / </span>
-        <a href="#">{{ dataEvents?.regID }}</a>
+        <template v-if="dataEvents?.regID">
+          <a href="#"> Record Details </a><span> / </span>
+          <a href="#">{{ dataEvents?.regID }}</a>
+        </template>
       </nav>
       <button class="main-icons">
         <span class="material-icons-round main-icon--size"> app_registration </span>
@@ -65,6 +67,8 @@ onMounted(async () => {
   font-size: 24px;
   font-weight: 400;
   line-height: 21px;
+  width: 24px;
+  height: 21px;
   color: $gray-1;
   @include pseudoActive;
 }

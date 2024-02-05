@@ -166,6 +166,8 @@ onMounted(async () => {
   align-items: center;
 }
 .nav-icon--size {
+  width: 24px;
+  height: 21px;
   font-size: 24px;
   font-weight: 400;
   line-height: 21px;
