@@ -5,7 +5,7 @@
         <IconEdmachina />
       </div>
       <div class="info-content">
-        <nav class="nav-content">
+        <!-- <div class="nav-content">
           <button class="nav-icon">
             <span class="material-icons-round nav-icon--size"> language </span>
           </button>
@@ -46,7 +46,13 @@
               />
             </div>
           </div>
-        </nav>
+        </div> -->
+        <Suspense>
+          <HeaderStatus />
+          <template #fallback>
+            <HeaderStatusSkeletonVue />
+          </template>
+        </Suspense>
       </div>
     </div>
   </div>
@@ -59,6 +65,8 @@ import { useFetch } from '../../hooks/useFetch'
 import { API_ENDPOINTS } from '@/services/endpoint'
 import { type IUser } from '../../interfaces/IUser'
 import { onMounted, ref, type Ref } from 'vue'
+import HeaderStatusSkeletonVue from '../ui/headerStatus/HeaderStatusSkeleton.vue'
+import HeaderStatus from '../ui/headerStatus/HeaderStatus.vue'
 
 const dataUser: Ref<IUser | null> = ref(null)
 
