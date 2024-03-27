@@ -1,9 +1,7 @@
 <template>
   <div class="header">
     <div class="header-container">
-      <div>
-        <IconEdmachina />
-      </div>
+      <div></div>
       <div class="info-content">
         <!-- <div class="nav-content">
           <button class="nav-icon">
@@ -59,8 +57,6 @@
 </template>
 
 <script setup lang="ts">
-import IconEdmachina from '../icons/headerIcons/IconEdmachina.vue'
-
 import { useFetch } from '../../hooks/useFetch'
 import { API_ENDPOINTS } from '@/services/endpoint'
 import { type IUser } from '../../interfaces/IUser'

@@ -1,7 +1,6 @@
 <template>
   <div class="footer">
     <p>COPYRIGHT © 2023</p>
-    <p>EdMachina</p>
   </div>
 </template>
 
